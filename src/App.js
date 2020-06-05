@@ -1,7 +1,7 @@
 const express = require('express');
-const app=express();
+const app = express();
 //importação de rotas [2]
-//const employeeRouters = require('.../routes/employeeRoute');
+const employeeRouters = require('./routes/employeeRoute.js');
 
 //Configurações
 app.set('port',process.env.PORT||3000);
@@ -19,8 +19,8 @@ app.use('/',(req,res)=>{
     res.send("Hello World");
 });
 
-//Rota
-//app.use('/employee', employeeRouters);
+//Rota de employee
+app.use('/employee', employeeRouters);
 
 app.listen(app.get('port'),()=>{
     console.log("Start server on port " + app.get('port'));

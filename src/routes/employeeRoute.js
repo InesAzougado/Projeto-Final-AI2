@@ -9,4 +9,8 @@ router.get('/save', (req,res) => {
     res.json({status: 'Employeed Saved'}); // -> Mensagem de confimação!
 });
 
+router.get('/testdata',employeeController.testdata);
+
+router.get('/list',employeeController.list);
+
 module.exports = router;
