@@ -19,7 +19,7 @@ app.listen(app.get('port'),()=>{
   console.log("Start server on port " + app.get('port'))
 })
 
-/*function App() {
+function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -40,4 +40,4 @@ app.listen(app.get('port'),()=>{
   );
 }
 
-export default App;*/
+export default App;
