@@ -1,0 +1,25 @@
+{
+  "name": "projeto-final-ai2",
+  "version": "1.0.0",
+  "description": "projeto final de ai2",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InesAzougado/Projeto-Final-AI2.git"
+  },
+  "author": "Ines Dennis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InesAzougado/Projeto-Final-AI2/issues"
+  },
+  "homepage": "https://github.com/InesAzougado/Projeto-Final-AI2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.2.1",
+    "postgres": "^1.0.2",
+    "sequelize": "^5.21.12"
+  }
+}
