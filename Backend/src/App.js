@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+// importação de rotas [1]
+const employeeRouters = require('./routes/employeeRoute.js')
+//Rota
+app.use('/employee',employeeRouters)
 
 //Configurações
 app.set('port', process.env.PORT || 3000);
