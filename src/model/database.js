@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
-'ai2',
+'isanails',
 'postgres',
 'ines2302',
 {

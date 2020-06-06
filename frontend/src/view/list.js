@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 class listComponent extends React.Component {
-    /*constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
             listEmployee: []
@@ -49,7 +49,7 @@ class listComponent extends React.Component {
                             <td>Viseu</td>
                             <td>232480533</td>
                             <td>
-                                <Link class="btn btn-outline-info " to={"/edit/"+data.id} >Edit</Link>
+                                
                             </td>
                             <td>
                                 <button className="btn btn-outline-danger "> Delete </button>
@@ -61,6 +61,9 @@ class listComponent extends React.Component {
             </table>
         );
     }
+
+    //BTN EDIT
+    //<Link class="btn btn-outline-info " to={"/edit/"+data.id} >Edit</Link>
 
     loadFillData() {
         return this.state.listEmployee.map((data, index) => {
@@ -82,7 +85,7 @@ class listComponent extends React.Component {
                 </tr>
             )
         });
-    }*/
+    }
 }
 
 export default listComponent;
