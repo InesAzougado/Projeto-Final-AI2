@@ -1,7 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { Link } from "react-router-dom";
 import axios from 'axios';
+
 class listComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -46,7 +48,7 @@ class listComponent extends React.Component {
                             <td>Viseu</td>
                             <td>232480533</td>
                             <td>
-                                <button className="btn btn-outline-info "> Edit </button>
+                                <Link class="btn btn-outline-info " to={"/edit/"+data.id} >Edit</Link>
                             </td>
                             <td>
                                 <button className="btn btn-outline-danger "> Delete </button>
