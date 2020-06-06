@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 class listComponent extends React.Component {
-    constructor(props) {
+    /*constructor(props) {
         super(props);
         this.state = {
             listEmployee: []
@@ -26,6 +26,7 @@ class listComponent extends React.Component {
                 alert(error)
             });
     }
+    
     render() {
         return (
             <table className="table table-hover table-striped">
@@ -81,7 +82,7 @@ class listComponent extends React.Component {
                 </tr>
             )
         });
-    }
+    }*/
 }
 
 export default listComponent;
