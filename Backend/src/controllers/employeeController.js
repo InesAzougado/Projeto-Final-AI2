@@ -21,7 +21,7 @@ controller.test = (req, res) => {
 
 controllers.testdata = async (req, res) => {
     const response = await sequelize.sync().then(function () {
-        /** APAGAR após a primeira EXECUÇÃO */
+        /** APAGAR após a primeira EXECUÇÃO 
         //Cria Role
         Role.create({
         role: 'Admin'
@@ -40,7 +40,7 @@ controllers.testdata = async (req, res) => {
         address: 'Rua da Missa, Lisboa, Portugal',
         phone: '221485543',
         roleId:1
-        });
+        });*/
         
         const data = Employee.findAll()
         return data;
