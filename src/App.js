@@ -14,9 +14,6 @@ app.use('/teste', (req, res) => {
     res.send("Rota TESTE.");
 });
 
-//Rota
-app.use('/employee',employeeRouters);
-
 app.use('/', (req, res) => {
     res.send("Hello World");
 });
@@ -29,6 +26,9 @@ app.use((req, res, next) => {
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
+
+//Rota
+app.use('/employee',employeeRouters);
 
 app.listen(app.get('port'), () => {
     console.log("Start server on port " + app.get('port'));
