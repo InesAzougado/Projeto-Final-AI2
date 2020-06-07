@@ -1,4 +1,4 @@
-varEmployee = require('../model/Employee');
+var Employee = require('../model/Employee');
 var Role = require('../model/Role');
 var sequelize = require('../model/database');
 

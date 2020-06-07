@@ -10,4 +10,5 @@ port: '5432',
 dialect: 'postgres'
 }
 );
+
 module.exports = sequelize;
