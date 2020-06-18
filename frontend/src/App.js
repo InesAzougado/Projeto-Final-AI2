@@ -13,16 +13,19 @@ function App() {
       <div className="App">
         <div class="row">
           <div class="fundo col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-            </div>
-            <nav>
-            </nav>
-            <img src="imagens/logo.png" class="imgslide"/>
+            <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            <ul class="">
+              <li><button class="btnnav" to={""}><p class="texto">Sobre</p></button></li>
+              <li><button class="btnnav" to={""}><p class="texto">Vernizes</p></button></li>
+              <li><button class="btnnav" to={""}><p class="texto">Equipamentos</p></button></li>
+              <li><button class="btnnav" to={""}><p class="texto">Dicas</p></button></li>
+              <li><button class="btnnav" to={""}><p class="texto">Portefólio</p></button></li>
+              <li><button class="btnnav" to={""}><p class="texto">Marcações</p></button></li>
+            </ul>
           </div>
         </div>
       </div>
-      
+
     </Router>
   );
 }

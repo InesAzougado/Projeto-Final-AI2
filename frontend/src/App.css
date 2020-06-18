@@ -4,17 +4,49 @@
 
 .fundo {
   background-color: #FFE8DF;
-  height: 100px;
+  height: 125px;
   width: 1000px;
 }
 
 .fundobranco {
   background-color: #FFFFFF;
-  height: 30px;
+  height: 40px;
 }
 
-.imglogo {
-  margin-left: 0px;
+.texto {
+  font-size: 20px;
+  color: #707070;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.btnnav {
+  background-color: #FFE8DF;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 25%;
+  margin-top: 10px;
+  padding: 0;
+  overflow: hidden;
+  background-color: none;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .App-logo {
