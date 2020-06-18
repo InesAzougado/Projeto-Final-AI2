@@ -18,7 +18,7 @@ function App() {
             </div>
             <nav>
             </nav>
-            <img src="img/logo.png"/>
+            <img src="imagens/logo.png" class="imgslide"/>
           </div>
         </div>
       </div>
