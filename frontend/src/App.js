@@ -5,21 +5,29 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Form from './view/form';
 import List from './view/list';
 import Edit from './view/edit';
-document.createElement('style');
 
 function App() {
   return (
     <Router>
 
       <div className="App">
-        <Link class="btn btn-success " to="/form">Add Employee</Link>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="row">
+          <div class="fundo col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-
-        </nav>
+            </div>
+            <nav>
+            </nav>
+            <img src="img/logo.png"/>
+          </div>
+        </div>
       </div>
-
+      
     </Router>
   );
 }
+
 export default App;
+
+//<Link class="btn btn-success " to="/form">Add Employee</Link>
+//<Link class="btn btn-outline-info " to={"/edit/"} >Edit</Link>

@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
+import '../App.css';
 
 const baseUrl = "http://localhost:3000";
 
@@ -46,7 +47,7 @@ class EditComponent extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div class="fundo">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Name</label>
