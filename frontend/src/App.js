@@ -9,8 +9,9 @@ import Edit from './view/edit';
 function App() {
   return (
     <Router>
-
+            <img src="https://i.ibb.co/PG8pcq6/logo.png" alt="merda para isto"></img>
       <div className="App">
+      
         <div class="row">
           <div class="fundo col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
