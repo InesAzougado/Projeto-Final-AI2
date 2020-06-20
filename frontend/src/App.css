@@ -42,7 +42,7 @@ li a {
 }
 
 li a:hover {
-  background-color: #ffefe8;
+  background-color: #fff9f6;
   color: #696969;
   text-decoration: none;
 }
@@ -107,7 +107,7 @@ li a:hover {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -166,4 +166,23 @@ li a:hover {
   top: 54%;
   transform: translate(-50%, -50%);
   border-radius: 4px;
+}
+
+.sobre{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sobre img{
+  width: 300px;
+  border-radius: 10px;
+  margin-left: -250px;
+}
+
+.textsobre {
+  font-size: 13px;
+  margin-top: -200px;
+  width: 500px;
 }

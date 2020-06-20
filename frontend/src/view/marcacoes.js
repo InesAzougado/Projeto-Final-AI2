@@ -2,85 +2,81 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
+import '../App.css';
 
-class listComponent extends React.Component {
+const baseUrl = "http://localhost:3000";
+
+class EditComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            listEmployee: []
+            dataEmployee: {},
+            campName: "",
+            campEmail: "",
+            campPhone: "",
+            campAddress: "",
+            stringRole: "",
+            selectRole: 0
         }
     }
     componentDidMount() {
-        const url = "http://localhost:3000/employee/list";
+        let userId = this.props.match.params.employeeId;
+        const url = baseUrl + "/employee/get/" + userId
         axios.get(url)
             .then(res => {
                 if (res.data.success) {
-                    const data = res.data.data;
-                    this.setState({ listEmployee: data });
-                } else {
-                    alert("Error asdfsadf Web Service!");
+                    const data = res.data.data[0]
+                    this.setState({
+                        dataEmployee: data,
+                        campName: data.name,
+                        campEmail: data.email,
+                        campPhone: data.phone,
+                        campAddress: data.address,
+                        stringRole: data.role.role,
+                        selectRole: data.roleId
+                    })
+                    console.log(JSON.stringify(data.role.role))
+                }
+                else {
+                    alert("Error web service")
                 }
             })
             .catch(error => {
-                alert("Error asdfsadf Web Service!  nnnnnaaaaaoooo  daaaa");
-            });
+                alert("Error server: " + error)
+            })
     }
     render() {
         return (
-            <table className="table table-hover table-striped">
-                <thead className="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Phone</th>
-                        <th colSpan="2">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td>Admin</td>
-                        <td>Nuno Costa</td>
-                        <td>ncosta@estgv.ipv.pt</td>
-                        <td>Viseu</td>
-                        <td>232480533</td>
-                        <td>
-                            <button className="btn btn-outline-info "> Edit </button>
-                        </td>
-                        <td>
-                            <button className="btn btn-outline-danger "> Delete </button>
-                        </td>
-                    </tr>
-                    {this.loadFillData()}
-                </tbody>
-            </table>
+            <div>
+                
+            </div>
         );
     }
 
-    loadFillData() {
-        return this.state.listEmployee.map((data, index) => {
-            return (
-                <tr key={index}>
-                    <th>{data.id}</th>
-                    <td>{data.role.role}</td>
-                    <td>{data.name}</td>
-                    <td>{data.email}</td>
-                    <td>{data.address}</td>
-                    <td>{data.phone}</td>
-                    <td>
-                        <button className="btn btn-outline-info "> Edit
-        </button>
-                    </td>
-                    <td>
-                        <button className="btn btn-outline-danger ">
-                            Delete </button>
-                    </td>
-                </tr>
-            )
-        });
+    sendUpdate() {
+        // get parameter id
+        let userId = this.props.match.params.employeeId;
+        // url de backend
+        const url = baseUrl + "/employee/update/" + userId
+        // parametros de datos post
+        const datapost = {
+            name: this.state.campName,
+            email: this.state.campEmail,
+            phone: this.state.campPhone,
+            address: this.state.campAddress,
+            role: this.state.selectRole
+        }
+        axios.post(url, datapost)
+            .then(response => {
+                if (response.data.success === true) {
+                    alert(response.data.message)
+                }
+                else {
+                    alert("Error")
+                }
+            }).catch(error => {
+                alert("Error 34 " + error)
+            })
     }
 }
-export default listComponent;
+export default EditComponent;

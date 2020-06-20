@@ -47,48 +47,20 @@ class EditComponent extends React.Component {
     }
     render() {
         return (
-            <div>
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Name </label>
-                        <input type="text" class="form-control"
-                            placeholder="Name" value={this.state.campName} onChange={(value) =>
-                                this.setState({ campName: value.target.value })} />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control"
-                            placeholder="Email" value={this.state.campEmail} onChange={(value) =>
-                                this.setState({ campEmail: value.target.value })} />
-                    </div>
+            <div class="sobre">
+                <div>
+                    <img src="https://i.ibb.co/KxH8m8P/manicure-profissional.jpg"></img>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputState">Role</label>
-                        <select id="inputState" class="form-control"
-                            onChange={(value) => this.setState({ selectRole: value.target.value })}>
-                            <option selected>Choose...</option>
-                            <option value="1">Admin...</option>
-                            <option value="2">Project Manager</option>
-                            <option value="3">Programer</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Phone</label>
-                        <input type="number" class="form-control"
-                            placeholder="Phone" value={this.state.campPhone}
-                            onChange={(value) => this.setState({ campPhone: value.target.value })} />
-                    </div>
+                <div class="textsobre">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt molestie velit eu vulputate.
+                    Mauris lacinia dui sed nunc suscipit sodales. Aenean ornare eu neque venenatis porttitor.
+                    Curabitur molestie feugiat nisi. Nam viverra, tortor ut semper luctus, urna lectus faucibus diam,
+                    vel vehicula massa tortor nec enim. Nunc finibus erat sed dolor egestas, eget mattis elit condimentum.
+                    Curabitur scelerisque nec neque sed tempus. Nam porttitor, lacus in congue ullamcorper, ex ipsum dapibus risus,
+                    sed cursus diam nibh sed nisi. Phasellus aliquet diam eu metus molestie accumsan. Duis consectetur vehicula
+                    interdum. Quisque efficitur, sapien et tristique condimentum, velit eros lobortis urna, vitae commodo magna nibh
+                    sed leo. Suspendisse odio mi, pellentesque non bibendum nec, rhoncus eget erat.</p>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress"
-                        placeholder="1234 Main St" value={this.state.campAddress}
-                        onChange={(value) =>
-                            this.setState({ campAddress: value.target.value })} />
-                </div>
-                <button type="submit" class="btn btn-primary"
-                    onClick={() => this.sendSave()}>Save</button>
             </div>
         );
     }
