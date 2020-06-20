@@ -13,19 +13,24 @@
   height: 40px;
 }
 
-.texto {
-  font-size: 20px;
-  color: #707070;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
-}
-
 .btnnav {
   background-color: #FFE8DF;
   border: none;
   margin-left: 5px;
   margin-right: 5px;
+  padding: 20px;
+  outline: none;
+  font-size: 20px;
+  color: #696969;
+}
+
+.btnnav :hover{
+  background-color: #FFFFFF;
+}
+
+.btnnav a{
+  outline: none;
+  text-decoration: none;
 }
 
 ul {
@@ -82,4 +87,74 @@ li a {
   to {
     transform: rotate(360deg);
   }
+}
+
+.logonavbar{
+  position: absolute;
+  left: 30px;
+  top: 50px;
+  
+}
+
+.login{
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #696969;
+  font-size: 15px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #FFE8DF;
+  color: white;
+  text-align: center;
+}
+
+.footersocial1{
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.footersocial2{
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.footersocial3{
+  position: absolute;
+  left: 150px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.footertext{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #696969;
+}
+
+.footermorada{
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: left;
+  color: #696969;
+}
+
+.arrowfoot{
+  position: absolute;
+  right: 165px;
 }
