@@ -2,9 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Form from './view/form';
-import List from './view/list';
-import Edit from './view/edit';
+import Equipamentos from './view/equipamentos';
+import Vernizes from './view/vernizes';
+import Sobre from './view/sobre';
+import Dicas from './view/dicas';
+import Portefolio from './view/portefolio';
+import Marcacoes from './view/marcacoes';
 
 function App() {
   return (
@@ -25,12 +28,12 @@ function App() {
 
             <div class="centermenu">
               <ul>
-                <li><a class="active" href="">Sobre</a></li>
-                <li><a href="">Vernizes</a></li>
-                <li><a href="">Equipamentos</a></li>
-                <li><a href="">Dicas</a></li>
-                <li><a href="">Portefólio</a></li>
-                <li><a href="">Marcações</a></li>
+                <li><a class="active" href="/sobre">Sobre</a></li>
+                <li><a href="/vernizes">Vernizes</a></li>
+                <li><a href="/equipamentos">Equipamentos</a></li>
+                <li><a href="/dicas">Dicas</a></li>
+                <li><a href="/portefolio">Portefólio</a></li>
+                <li><a href="/marcacoes">Marcações</a></li>
               </ul>
             </div>
 
