@@ -28,21 +28,17 @@ function App() {
 
             <div class="centermenu">
               <ul>
-                <li><a href="/sobre">Sobre</a></li>
-                <li><a href="/vernizes">Vernizes</a></li>
-                <li><a href="/equipamentos">Equipamentos</a></li>
-                <li><a href="/dicas">Dicas</a></li>
-                <li><a href="/portefolio">Portefólio</a></li>
-                <li><a href="/marcacoes">Marcações</a></li>
+                <li><Link to="/sobre">Sobre</Link></li>
+                <li><Link to="/vernizes">Vernizes</Link></li>
+                <li><Link to="/equipamentos">Equipamentos</Link></li>
+                <li><Link to="/dicas">Dicas</Link></li>
+                <li><Link to="/portefolio">Portefólio</Link></li>
+                <li><Link to="/marcacoes">Marcações</Link></li>
               </ul>
             </div>
 
           </div>
         </div>
-      </div>
-
-      <div class="video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZgVbsVxVJmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <div class="footer">
@@ -65,6 +61,14 @@ function App() {
           Avenida das Casas 111<br></br>3500 Viseu
       </div>
       </div>
+
+      <Route path="/sobre" exact component={Sobre}/> 
+      <Route path="/vernizes" exact component={Vernizes}/> 
+      <Route path="/equipamentos" exact component={Equipamentos}/>
+      <Route path="/dicas" exact component={Dicas}/> 
+      <Route path="/portefolio" exact component={Portefolio}/> 
+      <Route path="/marcacoes" exact component={Marcacoes}/>  
+
     </Router>
   );
 }
