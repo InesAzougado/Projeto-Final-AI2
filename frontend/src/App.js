@@ -21,15 +21,16 @@ function App() {
               <div class="login">
                 <img src="https://i.ibb.co/DtrFdt4/login.png" class="logo" width="20px" alt="Login"></img> Login
               </div>
-
             </div>
 
             <div class="centermenu">
               <ul>
-                <li><a class="active" href="#home">Home</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a class="active" href="">Sobre</a></li>
+                <li><a href="">Vernizes</a></li>
+                <li><a href="">Equipamentos</a></li>
+                <li><a href="">Dicas</a></li>
+                <li><a href="">Portefólio</a></li>
+                <li><a href="">Marcações</a></li>
               </ul>
             </div>
 
