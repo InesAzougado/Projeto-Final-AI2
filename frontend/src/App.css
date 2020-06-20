@@ -97,6 +97,15 @@ li a:hover {
   font-size: 15px;
 }
 
+.login a{
+  text-decoration: none;
+  color: #696969;
+}
+
+.login a:hover{
+  color: #000000;
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -149,4 +158,12 @@ li a:hover {
 .arrowfoot{
   position: absolute;
   right: 165px;
+}
+
+.video{
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
 }

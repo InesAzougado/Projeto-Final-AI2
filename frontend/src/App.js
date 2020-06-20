@@ -22,13 +22,13 @@ function App() {
             </div>
             <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="login">
-                <img src="https://i.ibb.co/DtrFdt4/login.png" class="logo" width="20px" alt="Login"></img> Login
+                <a href="" class=""><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Login"></img> Login</a>
               </div>
             </div>
 
             <div class="centermenu">
               <ul>
-                <li><a class="active" href="/sobre">Sobre</a></li>
+                <li><a href="/sobre">Sobre</a></li>
                 <li><a href="/vernizes">Vernizes</a></li>
                 <li><a href="/equipamentos">Equipamentos</a></li>
                 <li><a href="/dicas">Dicas</a></li>
@@ -40,15 +40,20 @@ function App() {
           </div>
         </div>
       </div>
+
+      <div class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZgVbsVxVJmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
       <div class="footer">
         <div class="footersocial1">
-          <img src="https://i.ibb.co/2NmpjNH/facebook.png" class="logo" width="30px" alt="Facebook"></img>
+          <a href="https://www.facebook.com/ines.azougado.58" target="_blank"><img src="https://i.ibb.co/2NmpjNH/facebook.png" class="logo" width="30px" alt="Facebook"></img></a>
         </div>
         <div class="footersocial2">
-          <img src="https://i.ibb.co/0VZ2Pqj/instagram.png" class="logo" width="30px" alt="Instagram"></img>
+          <a href="https://www.instagram.com/inesazougadoo" target="_blank"><img src="https://i.ibb.co/0VZ2Pqj/instagram.png" class="logo" width="30px" alt="Instagram"></img></a>
         </div>
         <div class="footersocial3">
-          <img src="https://i.ibb.co/gFpxZgn/youtube.png" class="logo" width="30px" alt="YouTube"></img>
+          <a href="http://www.youtube.com" target="_blank"><img src="https://i.ibb.co/gFpxZgn/youtube.png" class="logo" width="30px" alt="YouTube"></img></a>
         </div>
         <div class="footertext">
           Nails by Inês Azougado © 2020
