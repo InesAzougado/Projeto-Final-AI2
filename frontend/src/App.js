@@ -21,16 +21,18 @@ function App() {
               <div class="login">
                 <img src="https://i.ibb.co/DtrFdt4/login.png" class="logo" width="20px" alt="Login"></img> Login
               </div>
-              
+
             </div>
-            <ul class="">
-              <li><button class="btnnav" to={""}>Sobre</button></li>
-              <li><button class="btnnav" to={""}>Vernizes</button></li>
-              <li><button class="btnnav" to={""}>Equipamentos</button></li>
-              <li><button class="btnnav" to={""}>Dicas</button></li>
-              <li><button class="btnnav" to={""}>Portefólio</button></li>
-              <li><button class="btnnav" to={""}>Marcações</button></li>
-            </ul>
+
+            <div class="centermenu">
+              <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>

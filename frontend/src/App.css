@@ -5,7 +5,6 @@
 .fundo {
   background-color: #FFE8DF;
   height: 125px;
-  width: 1000px;
 }
 
 .fundobranco {
@@ -13,33 +12,20 @@
   height: 40px;
 }
 
-.btnnav {
-  background-color: #FFE8DF;
-  border: none;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 20px;
-  outline: none;
-  font-size: 20px;
-  color: #696969;
-}
-
-.btnnav :hover{
-  background-color: #FFFFFF;
-}
-
-.btnnav a{
-  outline: none;
-  text-decoration: none;
+.centermenu{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 ul {
   list-style-type: none;
-  margin-left: 25%;
-  margin-top: 10px;
+  margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: none;
+  background-color: #FFE8DF;
+  width: 100%;
 }
 
 li {
@@ -48,9 +34,15 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: #696969;
   text-align: center;
   padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #FFFFFF;
+  color: #696969;
   text-decoration: none;
 }
 
