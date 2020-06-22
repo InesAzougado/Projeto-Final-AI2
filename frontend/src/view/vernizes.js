@@ -47,8 +47,249 @@ class EditComponent extends React.Component {
     }
     render() {
         return (
-            <div>
-                
+            <div class="vernizesscroll">
+                <div class="centerscroll">
+                    <div class="correcao2" class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+                                <div class="conteudodiv" id="1">
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="cardimg">
+                                            <div class="overlay">
+                                            </div>
+                                        </div>
+                                        <footer class="carddesc">
+                                            <p class="titulofilme">COCO</p>
+                                            <p class="textofilme">Animação, Família, Fantasia</p>
+                                        </footer>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

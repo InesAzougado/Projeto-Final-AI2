@@ -18,7 +18,7 @@ function App() {
         <div class="row">
           <div class="fundo col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="logonavbar">
-              <img src="https://i.ibb.co/nwdDYxy/logobrancosombra.png" class="logo" width="250px" alt="Logo Inês Azougado Nails"></img>
+              <Link ><img src="https://i.ibb.co/nwdDYxy/logobrancosombra.png" class="logo" width="250px" alt="Logo Inês Azougado Nails"></img></Link>
             </div>
             <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="login">

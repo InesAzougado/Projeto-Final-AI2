@@ -43,8 +43,9 @@ li a {
 
 li a:hover {
   background-color: #fff9f6;
-  color: #696969;
+  color: #000000;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .App-logo {
@@ -115,6 +116,7 @@ li a:hover {
   background-color: #FFE8DF;
   color: white;
   text-align: center;
+  display: block;
 }
 
 .footersocial1{
@@ -160,18 +162,10 @@ li a:hover {
   right: 165px;
 }
 
-.video{
-  position: absolute;
-  left: 50%;
-  top: 54%;
-  transform: translate(-50%, -50%);
-  border-radius: 4px;
-}
-
 .sobre{
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 60%;
+  top: 53%;
   transform: translate(-50%, -50%);
 }
 
@@ -183,6 +177,105 @@ li a:hover {
 
 .textsobre {
   font-size: 13px;
-  margin-top: -200px;
+  margin-top: -205px;
+  margin-left: 100px;
   width: 500px;
+  text-align: justify;
+  color: #696969;
+}
+
+.vernizesscroll{
+  width: 100%;
+  height: 515px;
+  overflow: scroll;
+}
+
+.card{
+  background-color: rgba(187, 187, 187, 0);
+  box-shadow: 0px 0px 10px rgba(105, 105, 105, 0.59);
+  width: 180px;
+  height: 180px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.cardimg{
+  height: 130px;
+  background-color: #FFE8DF;
+}
+
+.titulofilme{
+  font-size: 15px;
+  text-align: left;
+  color: #696969;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.textofilme2{
+  font-size: 12px;
+  text-align: left;
+  color: #696969;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  margin-top: -17px;
+}
+
+.titulofilme2{
+  font-size: 17px;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.descricao2{
+  font-size: 13px;
+  text-align: justify;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.textofilme{
+  font-size: 10px;
+  text-align: left;
+  color: #696969;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  margin-top: -17px;
+}
+
+.imagemfilme{
+  height: 200px;
+  width: 298px;
+  margin: none;
+}
+
+.carddesc{
+  height: 50px;
+  background-color: #ffffff;
+}
+
+.centerscroll{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.equipamentos{
+  position: absolute;
+  left: 60%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.equipamentos img{
+  width: 300px;
+  border-radius: 10px;
+  margin-left: -250px;
 }

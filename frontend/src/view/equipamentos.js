@@ -47,8 +47,22 @@ class EditComponent extends React.Component {
     }
     render() {
         return (
-            <div>
-                
+            <div class="vernizesscroll">
+                <div class="equipamentos">
+                    <div>
+                        <img src="https://i.ibb.co/KxH8m8P/manicure-profissional.jpg"></img>
+                    </div>
+                    <div class="textsobre">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt molestie velit eu vulputate.
+                        Mauris lacinia dui sed nunc suscipit sodales. Aenean ornare eu neque venenatis porttitor.
+                        Curabitur molestie feugiat nisi. Nam viverra, tortor ut semper luctus, urna lectus faucibus diam,
+                        vel vehicula massa tortor nec enim. Nunc finibus erat sed dolor egestas, eget mattis elit condimentum.
+                        Curabitur scelerisque nec neque sed tempus. Nam porttitor, lacus in congue ullamcorper, ex ipsum dapibus risus,
+                        sed cursus diam nibh sed nisi. Phasellus aliquet diam eu metus molestie accumsan. Duis consectetur vehicula
+                        interdum. Quisque efficitur, sapien et tristique condimentum, velit eros lobortis urna, vitae commodo magna nibh
+                    sed leo. Suspendisse odio mi, pellentesque non bibendum nec, rhoncus eget erat.</p>
+                    </div>
+                </div>
             </div>
         );
     }
