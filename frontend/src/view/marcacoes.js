@@ -48,7 +48,30 @@ class EditComponent extends React.Component {
     render() {
         return (
             <div>
-                
+                <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+                <div class="logo"></div>
+                <div class="login-block">
+                    <h1>Faça Login</h1>
+                    <form>
+                        <select name="mes" id="mes">
+                            <option value="janeiro">Janeiro</option>
+                            <option value="fevereiro">Fevereiro</option>
+                            <option value="marco">Março</option>
+                            <option value="abril">Abril</option>
+                            <option value="maio">Maio</option>
+                            <option value="junho">Junho</option>
+                            <option value="julho">Julho</option>
+                            <option value="agosto">Agosto</option>
+                            <option value="setembro">Setembro</option>
+                            <option value="outubro">Outubro</option>
+                            <option value="novembro">Novembro</option>
+                            <option value="dezembro">Dezembro</option>
+                        </select>
+                        <input type="text" value="" placeholder="Nº de Cliente" id="username" />
+                        <input type="password" value="" placeholder="Palavra-passe" id="password" />
+                        <button>Entrar</button>
+                    </form>
+                </div>
             </div>
         );
     }

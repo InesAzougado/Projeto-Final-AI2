@@ -48,6 +48,7 @@ class EditComponent extends React.Component {
     render() {
         return (
             <div class="logincenter">
+                
                 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
                 <div class="logo"></div>
                 <div class="login-block">
@@ -58,6 +59,7 @@ class EditComponent extends React.Component {
                         <button>Entrar</button>
                     </form>
                 </div>
+    
             </div>
         );
     }
