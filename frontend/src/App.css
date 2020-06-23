@@ -213,33 +213,6 @@ li a:hover {
   padding-top: 10px;
 }
 
-.textofilme2{
-  font-size: 12px;
-  text-align: left;
-  color: #696969;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 20px;
-  margin-top: -17px;
-}
-
-.titulofilme2{
-  font-size: 17px;
-  text-align: left;
-  color: rgb(255, 255, 255);
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 20px;
-  padding-top: 10px;
-}
-
-.descricao2{
-  font-size: 13px;
-  text-align: justify;
-  color: rgb(255, 255, 255);
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 .textofilme{
   font-size: 10px;
   text-align: left;
@@ -268,14 +241,39 @@ li a:hover {
 }
 
 .equipamentos{
-  position: absolute;
-  left: 60%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  margin-left: 38%;
+  margin-right: 40%;
+  margin-top: 3%;
+}
+
+.equipamentos2{
+  margin-left: 38%;
+  margin-right: 40%;
+  margin-top: 3%;
 }
 
 .equipamentos img{
   width: 300px;
   border-radius: 10px;
   margin-left: -250px;
+}
+
+.imgequip2 {
+  width: 300px;
+  border-radius: 10px;
+  margin-left: 300px;
+}
+
+.textoequip2 {
+  font-size: 13px;
+  margin-top: -205px;
+  margin-left: -250px;
+  width: 500px;
+  text-align: justify;
+  color: #696969;
+}
+
+.cardimgportfolio {
+  height: 180px;
+  background-color: #FFE8DF;
 }
