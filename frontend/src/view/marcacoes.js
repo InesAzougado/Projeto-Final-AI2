@@ -49,9 +49,8 @@ class EditComponent extends React.Component {
         return (
             <div>
                 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
-                <div class="logo"></div>
+                <div class="marccenter"></div>
                 <div class="login-block">
-                    <h1>Faça Login</h1>
                     <form>
                         <select name="mes" id="mes">
                             <option value="janeiro">Janeiro</option>
@@ -67,6 +66,8 @@ class EditComponent extends React.Component {
                             <option value="novembro">Novembro</option>
                             <option value="dezembro">Dezembro</option>
                         </select>
+
+                    
                         <input type="text" value="" placeholder="Nº de Cliente" id="username" />
                         <input type="password" value="" placeholder="Palavra-passe" id="password" />
                         <button>Entrar</button>
