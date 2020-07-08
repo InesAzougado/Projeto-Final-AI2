@@ -51,8 +51,10 @@ class EditComponent extends React.Component {
                 <div class="login-block">
                     <h1>Faça Login</h1>
                     <form>
-                        <input type="text" value="" placeholder="Nº de Cliente" id="username" />
-                        <input type="password" value="" placeholder="Palavra-passe" id="password" />
+                        <label>Nº de Cliente</label><br></br>
+                        <input type="text" placeholder="" id="username" /><br></br>
+                        <label>Palavra-passe</label><br></br>
+                        <input type="password" placeholder="" id="password" />
                         <button>Entrar</button>
                     </form>
                 </div>

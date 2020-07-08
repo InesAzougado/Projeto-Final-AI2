@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
 
-      <div className="App">98999999
+      <div className="App">
 
         <div class="row">
           <div class="fundo col-xs-12 col-sm-12 col-md-12 col-lg-12">
