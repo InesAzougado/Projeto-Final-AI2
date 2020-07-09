@@ -15,6 +15,7 @@ var users = sequelize.define('users',
     },
     { timestamps: false, }
 );
+
 users.beforeCreate((users, options) => {
     return bcrypt.hash(users.pass, 10).then(hash => {
         users.pass = hash;

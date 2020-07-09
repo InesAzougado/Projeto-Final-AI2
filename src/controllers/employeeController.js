@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const users = require('../model/utilizador');
-const sequelize = require('../model/database'); const config = require('../config');
+const sequelize = require('../model/database');
+const config = require('../config');
 
 var users = require('../model/utilizador');
 var sequelize = require('../model/database');
