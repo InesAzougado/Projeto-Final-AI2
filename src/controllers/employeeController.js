@@ -1,14 +1,17 @@
-var Employee = require('../model/Employee');
-var Role = require('../model/Role');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const users = require('../model/utilizador');
+const sequelize = require('../model/database'); const config = require('../config');
+
+var users = require('../model/utilizador');
 var sequelize = require('../model/database');
 
 const controllers = {}
 
 sequelize.sync()
 
-controllers.list = async (req, res) => {
-    const data = await Employee.findAll({
-        include: [Role]
+controllers.listausers = async (req, res) => {
+    const data = await users.findAll({
     })
         .then(function (data) {
             return data;
@@ -16,7 +19,7 @@ controllers.list = async (req, res) => {
         .catch(error => {
             return error;
         });
-    res.json({ success: true, data: data });
+    res.json({ sucess: true, data: data });
 }
 
 /* REGISTAR ---------------------- */
