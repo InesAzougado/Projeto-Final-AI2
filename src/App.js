@@ -3,7 +3,6 @@ const app = express();
 // importação de rotas [1]
 const employeeRouters = require('./routes/employeeRoute.js');
 
-
 //Configurações
 app.set('port', process.env.PORT || 3000);
 

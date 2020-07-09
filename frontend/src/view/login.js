@@ -1,73 +1,91 @@
-import React, { Component } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input"; import CheckButton from "react-validation/build/button"; import AuthService from "../view/auth.service";
-const required = value => {
-    if (!value) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                Este campo é de preenchimento obrigatório! </div>
-        );
-    }
-};
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import axios from 'axios';
+import '../App.css';
 
-export default class Login extends Component {
+const baseUrl = "http://localhost:3000";
+
+class EditComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.handleLogin = this.handleLogin.bind(this); this.onChangeUsername = this.onChangeUsername.bind(this); this.onChangePassword = this.onChangePassword.bind(this);
         this.state = {
-            username: "", password: "", loading: false, message: ""
-        };
-    }
-
-    onChangeUsername(e) {
-        this.setState({ username: e.target.value });
-    } onChangePassword(e) {
-        this.setState({ password: e.target.value });
-    }
-
-    handleLogin(e) {
-        e.preventDefault();
-        this.setState({ message: "", loading: true }); this.form.validateAll();
-        if (this.checkBtn.context._errors.length === 0) {
-            AuthService.login(this.state.username, this.state.password).then(
-                () => {
-                    this.props.history.push("/");
-                    window.location.reload();
-                }
-            ); this.setState({
-                loading: false,
-                message: "Login Errado"
-            });
+            dataEmployee: {},
+            campName: "",
+            campEmail: "",
+            campPhone: "",
+            campAddress: "",
+            stringRole: "",
+            selectRole: 0
         }
     }
-
-
+    componentDidMount() {
+        let userId = this.props.match.params.employeeId;
+        const url = baseUrl + "/employee/get/" + userId
+        axios.get(url)
+            .then(res => {
+                if (res.data.success) {
+                    const data = res.data.data[0]
+                    this.setState({
+                        dataEmployee: data,
+                        campName: data.name,
+                        campEmail: data.email,
+                        campPhone: data.phone,
+                        campAddress: data.address,
+                        stringRole: data.role.role,
+                        selectRole: data.roleId
+                    })
+                    console.log(JSON.stringify(data.role.role))
+                }
+                else {
+                    alert("Error web service")
+                }
+            })
+            .catch(error => {
+                alert("Error server: " + error)
+            })
+    }
     render() {
         return (
-            <div className="col-md-4">
-                <div className="card card-container">
-                    <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="profile-img" className=" profile-img-card" />
-                    <Form onSubmit={this.handleLogin} ref={c => { this.form = c; }}> <div className="form-group">
-                        <label htmlFor="username">Username</label>
-                        <Input type="text" className="form-control" name="username" value={this.state.username} onChange={this.onChangeUsername} validations={[required]} /></div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <Input type="password" className="form-control" name="password" value={this.state.password} onChange={this.onChangePassword} validations={[required]} />
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-primary btn-block" disabled={this.state.loading}>
-                                {this.state.loading && (<span className="spinner-border spinner-border-sm"></span>
-                                )}
-                                <span>Login</span>
-                            </button>
-                        </div> {this.state.message && (
-                            <div className="form-group">
-                                <div className="alert alert-danger" role="alert">
-                                    {this.state.message} </div>
-                            </div>)}
-                        <CheckButton style={{ display: "none" }} ref={c => { this.checkBtn = c; }} />
-                    </Form>
+            <div class="logincenter">
+                <div class="login-block">
+                    <h1>Faça Login</h1>
+                    <form>
+                        <label>Nº de Cliente</label><br></br>
+                        <input type="text" placeholder="" id="username" /><br></br>
+                        <label>Palavra-passe</label><br></br>
+                        <input type="password" placeholder="" id="password" />
+                        <button>Entrar</button>
+                    </form>
                 </div>
-            </div>);
+            </div>
+        );
+    }
+
+    sendUpdate() {
+        // get parameter id
+        let userId = this.props.match.params.employeeId;
+        // url de backend
+        const url = baseUrl + "/employee/update/" + userId
+        // parametros de datos post
+        const datapost = {
+            name: this.state.campName,
+            email: this.state.campEmail,
+            phone: this.state.campPhone,
+            address: this.state.campAddress,
+            role: this.state.selectRole
+        }
+        axios.post(url, datapost)
+            .then(response => {
+                if (response.data.success === true) {
+                    alert(response.data.message)
+                }
+                else {
+                    alert("Error")
+                }
+            }).catch(error => {
+                alert("Error 34 " + error)
+            })
     }
 }
+export default EditComponent;

@@ -9,14 +9,6 @@ import Dicas from './view/dicas';
 import Portefolio from './view/portefolio';
 import Marcacoes from './view/marcacoes';
 import Login from './view/login';
-import AuthService from "./view/auth.service"; import Login from "./view/login";
-import Profile from "./view/profile";
-
-constructor(props) {
-  super(props);
-  this.logOut = this.logOut.bind(this);
-  this.state = { currentUser: { email: "Anonimo" } };
-}
 
 function App() {
   return (
@@ -31,7 +23,7 @@ function App() {
             </div>
             <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="login">
-                <Link to="/login"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Login"></img> Login </Link>
+              <Link to="/login"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Login"></img> Login </Link>
               </div>
             </div>
 
@@ -71,25 +63,16 @@ function App() {
       </div>
       </div>
 
-      <Route path="/sobre" exact component={Sobre} />
-      <Route path="/vernizes" exact component={Vernizes} />
-      <Route path="/equipamentos" exact component={Equipamentos} />
-      <Route path="/dicas" exact component={Dicas} />
-      <Route path="/portefolio" exact component={Portefolio} />
-      <Route path="/marcacoes" exact component={Marcacoes} />
-      <Route path="/login" exact component={Login} />
-      <Route exact path="/login" component={Login} />
+      <Route path="/sobre" exact component={Sobre}/> 
+      <Route path="/vernizes" exact component={Vernizes}/> 
+      <Route path="/equipamentos" exact component={Equipamentos}/>
+      <Route path="/dicas" exact component={Dicas}/> 
+      <Route path="/portefolio" exact component={Portefolio}/> 
+      <Route path="/marcacoes" exact component={Marcacoes}/>  
+      <Route path="/login" exact component={Login}/>  
 
     </Router>
   );
-}
-
-logOut() {
-  AuthService.logout();
-}
-
-render() {
-  const { currentUser } = this.state;
 }
 
 export default App;
