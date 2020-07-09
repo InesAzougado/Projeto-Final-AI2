@@ -4,22 +4,20 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
 import '../App.css';
 
-const baseUrl = "http://localhost:3000";
-
 class EditComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            listEmployee: []
+            listausers: []
         }
     }
     componentDidMount() {
-        const url = "http://localhost:3000/users/projetos_list";
+        const url = "http://localhost:3000/employee/listar";
         axios.get(url)
             .then(res => {
                 if (res.data.sucess) {
                     const data = res.data.data;
-                    this.setState({ listEmployee: data });
+                    this.setState({ listausers: data });
                 } else {
                     alert("Error Web Service!");
                 }
@@ -139,7 +137,7 @@ class EditComponent extends React.Component {
     }
 
     loadFillData() {
-        return this.state.listEmployee.map((data, index) => {
+        return this.state.listausers.map((data, index) => {
             return (
                 <tr>
                     <th scope="row">{data.id_user}</th>
