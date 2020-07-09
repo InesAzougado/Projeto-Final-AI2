@@ -1,28 +1,26 @@
 var Sequelize = require('sequelize');
 var sequelize = require('./database');
-// importa o modelo – chave forasteira roleID
-var Role = require('./Role');
-var Employee = sequelize.define('employee', {
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    name: Sequelize.STRING,
-    email: Sequelize.STRING,
-    address: Sequelize.STRING,
-    phone: Sequelize.BIGINT,
-    roleId: {
-        type: Sequelize.INTEGER,
-        // referência a outro modelo
-        references: {
-            model: Role,
-            key: 'id'
-        }
-    }
-},
+
+var users = sequelize.define('users',
     {
-        timestamps: false,
-    });
-Employee.belongsTo(Role)
-module.exports = Employee
+        id_user: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoincrement: true,
+        },
+        n_cliente: Sequelize.INTEGER,
+        pass: Sequelize.STRING,
+        tipo: Sequelize.CHAR,
+    },
+    { timestamps: false, }
+);
+users.beforeCreate((users, options) => {
+    return bcrypt.hash(users.pass, 10).then(hash => {
+        users.pass = hash;
+    })
+        .catch(err => {
+            throw new Error();
+        });
+});
+
+module.exports = users;

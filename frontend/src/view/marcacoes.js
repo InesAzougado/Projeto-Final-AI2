@@ -10,40 +10,23 @@ class EditComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataEmployee: {},
-            campName: "",
-            campEmail: "",
-            campPhone: "",
-            campAddress: "",
-            stringRole: "",
-            selectRole: 0
+            listEmployee: []
         }
     }
     componentDidMount() {
-        let userId = this.props.match.params.employeeId;
-        const url = baseUrl + "/employee/get/" + userId
+        const url = "http://localhost:3000/users/projetos_list";
         axios.get(url)
             .then(res => {
-                if (res.data.success) {
-                    const data = res.data.data[0]
-                    this.setState({
-                        dataEmployee: data,
-                        campName: data.name,
-                        campEmail: data.email,
-                        campPhone: data.phone,
-                        campAddress: data.address,
-                        stringRole: data.role.role,
-                        selectRole: data.roleId
-                    })
-                    console.log(JSON.stringify(data.role.role))
-                }
-                else {
-                    alert("Error web service")
+                if (res.data.sucess) {
+                    const data = res.data.data;
+                    this.setState({ listEmployee: data });
+                } else {
+                    alert("Error Web Service!");
                 }
             })
             .catch(error => {
-                alert("Error server: " + error)
-            })
+                alert(error);
+            });
     }
     render() {
         return (
@@ -129,39 +112,45 @@ class EditComponent extends React.Component {
                             <input type="text" placeholder="" id="data" />
                             <input type="text" placeholder="" id="estado" /><br></br><br></br>
                             <label>Contacte-nos</label><br></br>
-                            <input type="text" value="123456789" placeholder="" id="tele" readOnly/>
-                            <input type="text" value="nailsbyines@email.com" placeholder="" id="email" readOnly/>
+                            <input type="text" value="123456789" placeholder="" id="tele" readOnly />
+                            <input type="text" value="nailsbyines@email.com" placeholder="" id="email" readOnly />
                         </form>
+                    </div>
+                    <div class="card">
+                        <a href="projeto_rh.html"><table class="table">
+
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col"> </th>
+                                    <th scope="col">Nome Projecto</th>
+                                    <th scope="col">Data Inicio</th>
+                                    <th scope="col">Data Fim</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.loadFillData()}
+                            </tbody>
+
+                        </table></a>
                     </div>
                 </div>
             </div>
         );
     }
 
-    sendUpdate() {
-        // get parameter id
-        let userId = this.props.match.params.employeeId;
-        // url de backend
-        const url = baseUrl + "/employee/update/" + userId
-        // parametros de datos post
-        const datapost = {
-            name: this.state.campName,
-            email: this.state.campEmail,
-            phone: this.state.campPhone,
-            address: this.state.campAddress,
-            role: this.state.selectRole
-        }
-        axios.post(url, datapost)
-            .then(response => {
-                if (response.data.success === true) {
-                    alert(response.data.message)
-                }
-                else {
-                    alert("Error")
-                }
-            }).catch(error => {
-                alert("Error 34 " + error)
-            })
+    loadFillData() {
+        return this.state.listEmployee.map((data, index) => {
+            return (
+                <tr>
+                    <th scope="row">{data.id_user}</th>
+                    <td>{data.n_cliente}</td>
+                    <td>{data.pass}</td>
+                    <td>{data.tipo}</td>
+                </tr>
+            )
+        });
     }
 }
+
+
 export default EditComponent;
