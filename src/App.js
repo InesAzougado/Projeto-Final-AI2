@@ -9,6 +9,15 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 app.use(express.json());
 
+//Rotas
+app.use('/teste', (req, res) => {
+    res.send("Rota TESTE.");
+});
+
+app.use('/', (req, res) => {
+    res.send("Hello World");
+});
+
 // Configurar CORS
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -19,16 +28,7 @@ app.use((req, res, next) => {
 });
 
 //Rota
-app.use('/isanails',employeeRouters);
-
-//Rotas
-app.use('/teste', (req, res) => {
-    res.send("Rota TESTE.");
-});
-
-app.use('/', (req, res) => {
-    res.send("Hello World");
-});
+app.use('/employee',employeeRouters);
 
 app.listen(app.get('port'), () => {
     console.log("Start server on port " + app.get('port'));

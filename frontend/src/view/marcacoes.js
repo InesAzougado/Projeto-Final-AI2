@@ -3,57 +3,48 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
 import '../App.css';
-import authHeader from './auth-header';
+
+const baseUrl = "http://localhost:3000";
 
 class EditComponent extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
-            listEmployee: []
+            dataEmployee: {},
+            campName: "",
+            campEmail: "",
+            campPhone: "",
+            campAddress: "",
+            stringRole: "",
+            selectRole: 0
         }
     }
     componentDidMount() {
-        const url = "http://localhost:3000/isanails/listar";
+        let userId = this.props.match.params.employeeId;
+        const url = baseUrl + "/employee/get/" + userId
         axios.get(url)
             .then(res => {
-                if (res.data.sucess) {
-                    const data = res.data.data;
-                    this.setState({ listEmployee: data });
-                } else {
-                    alert("Error Web Service!");
-                }
-            })
-            .catch(error => {
-                alert(error);
-            });
-    }
-    loadEmployee() {
-        const url = "http://localhost:8000/employee/list"; axios.get(url, { headers: authHeader() })
-            .then(res => {
                 if (res.data.success) {
-                    const data = res.data.data;
-                    this.setState({ listEmployee: data });
-                } else { alert("Error Web Service!"); }
-            })
-            .catch(error => {
-                alert(error);
-            });
-    }
-    sendDelete(userId) {
-        const baseUrl = "http://localhost:8000/employee/delete" 
-        axios.post(baseUrl, { headers: authHeader(), id: userId })
-            .then(response => {
-                if (response.data.success) {
-                    Swal.fire('Deleted!', 'Your employee has been deleted.', 'success');
-                    this.loadEmployee();
+                    const data = res.data.data[0]
+                    this.setState({
+                        dataEmployee: data,
+                        campName: data.name,
+                        campEmail: data.email,
+                        campPhone: data.phone,
+                        campAddress: data.address,
+                        stringRole: data.role.role,
+                        selectRole: data.roleId
+                    })
+                    console.log(JSON.stringify(data.role.role))
+                }
+                else {
+                    alert("Error web service")
                 }
             })
             .catch(error => {
-                alert("Error 325 ")
+                alert("Error server: " + error)
             })
     }
-
     render() {
         return (
             <div>
@@ -61,7 +52,7 @@ class EditComponent extends React.Component {
                 <div class="marccenter">
                     <div class="marc-block" id="m1">
                         <form>
-                            <h1>Faça aqui a sua Marcação</h1>
+                            <h1>Faça a sua Marcação aqui</h1>
                             <label>Escolher data</label><br></br>
                             <select name="mes" id="mes" required>
                                 <option disabled selected>Mês</option>
@@ -135,45 +126,42 @@ class EditComponent extends React.Component {
                         <form>
                             <h1>Histórico de Marcações</h1><br></br>
                             <label>Data e Estado</label><br></br>
-                            <input type="text" placeholder="" id="data" readOnly />
-                            <input type="text" placeholder="" id="estado" readOnly /><br></br><br></br>
+                            <input type="text" placeholder="" id="data" />
+                            <input type="text" placeholder="" id="estado" /><br></br><br></br>
                             <label>Contacte-nos</label><br></br>
-                            <input type="text" value="123456789" placeholder="" id="tele" readOnly />
-                            <input type="text" value="nailsbyines@email.com" placeholder="" id="email" readOnly />
+                            <input type="text" value="123456789" placeholder="" id="tele" readOnly/>
+                            <input type="text" value="nailsbyines@email.com" placeholder="" id="email" readOnly/>
                         </form>
-                    </div>
-                    <div class="card">
-                        <a href="projeto_rh.html"><table class="table">
-
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col"> </th>
-                                    <th scope="col">Nome Projecto</th>
-                                    <th scope="col">Data Inicio</th>
-                                    <th scope="col">Data Fim</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.loadFillData()}
-                            </tbody>
-
-                        </table></a>
                     </div>
                 </div>
             </div>
         );
     }
-    loadFillData() {
-        return this.state.listEmployee.map((data, index) => {
-            return (
-                <tr>
-                    <th scope="row">{data.id_user}</th>
-                    <td>{data.n_cliente}</td>
-                    <td>{data.pass}</td>
-                    <td>{data.tipo}</td>
-                </tr>
-            )
-        });
+
+    sendUpdate() {
+        // get parameter id
+        let userId = this.props.match.params.employeeId;
+        // url de backend
+        const url = baseUrl + "/employee/update/" + userId
+        // parametros de datos post
+        const datapost = {
+            name: this.state.campName,
+            email: this.state.campEmail,
+            phone: this.state.campPhone,
+            address: this.state.campAddress,
+            role: this.state.selectRole
+        }
+        axios.post(url, datapost)
+            .then(response => {
+                if (response.data.success === true) {
+                    alert(response.data.message)
+                }
+                else {
+                    alert("Error")
+                }
+            }).catch(error => {
+                alert("Error 34 " + error)
+            })
     }
 }
 export default EditComponent;
