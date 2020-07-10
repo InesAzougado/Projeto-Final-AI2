@@ -1,14 +1,13 @@
 var Employee = require('../model/Employee');
 var Role = require('../model/Role');
 var sequelize = require('../model/database');
-const users = require('../model/Employee');
 
 const controllers = {}
 
 sequelize.sync()
 
-controllers.listausers = async (req, res) => {
-    const data = await users.findAll({
+controllers.list = async (req, res) => {
+    const data = await Employee.findAll({
         include: [Role]
     })
         .then(function (data) {

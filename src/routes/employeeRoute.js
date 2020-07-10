@@ -3,7 +3,7 @@ const router = express.Router();
 //importer os controladores [2]
 const employeeController = require('../controllers/employeeController');
 
-router.get('/listar',employeeController.listausers);
+router.get('/list',employeeController.list);
 
 router.post('/create',employeeController.create);
 
