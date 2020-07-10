@@ -119,8 +119,8 @@ class EditComponent extends React.Component {
                     <h1>Faça Login</h1>
                     <form onSubmit={this.submitHandler} ref={c => { this.form = c; }}>
                         <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" className=" form-control" name="email"
+                            <label htmlFor="email">Número de Cliente</label>
+                            <input type="text" className=" form-control" name="email"
                                 value={this.state.email} onChange={this.onChangeEmail}
                                 validations={[required]} />
                         </div>
