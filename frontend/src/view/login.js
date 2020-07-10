@@ -70,46 +70,6 @@ class EditComponent extends React.Component {
                 alert("Error 34 " + error);
             });
 
-        /*
-        let NCliente = this.state.NCliente;
-        let Pass = this.state.Pass;
-
-        sessionStorage.setItem('NCliente', NCliente);
-        sessionStorage.getItem('NCliente');
-
-        fetch("http://localhost:3000/users", {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                NCliente: NCliente,
-                Pass: Pass,
-            })
-        }).then(res => { return res.json() })
-            .then((responseJson) => {
-                if (responseJson.auth === true) {
-                    swal({
-                        title: "Bem-vindo!" + " " + NCliente,
-                        text: "Obrigado"
-                    }).then(function () {
-                        fetch("http://localhost:3000/users/idutilizador", {
-                            method: "POST",
-                            headers: {
-                                'Accept': 'application/json',
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                NCliente: NCliente,
-                            })
-                        }).then(res => res.json())
-                            .then(data => {
-                                sessionStorage.setItem('idutilizadorsessao', data)
-                            })
-                    })
-                }
-            })*/
     }
 
     render() {
@@ -119,8 +79,8 @@ class EditComponent extends React.Component {
                     <h1>Faça Login</h1>
                     <form onSubmit={this.submitHandler} ref={c => { this.form = c; }}>
                         <div className="form-group">
-                            <label htmlFor="email">Número de Cliente</label>
-                            <input type="text" className=" form-control" name="email"
+                            <label htmlFor="email">Email</label>
+                            <input type="email" className=" form-control" name="email"
                                 value={this.state.email} onChange={this.onChangeEmail}
                                 validations={[required]} />
                         </div>
