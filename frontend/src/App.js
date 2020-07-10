@@ -91,7 +91,7 @@ function App() {
               </div>
               <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="login">
-                <Link to="/login"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Login"></img> Login </Link>
+                <Link to="/login"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Login"></img> Logout </Link>
                 </div>
               </div>
   
