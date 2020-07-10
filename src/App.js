@@ -1,22 +1,8 @@
 const express = require('express');
 const app = express();
 // importação de rotas [1]
-const employeeRouters = require('./routes/employeeRoute.js');
-
-//Configurações
-app.set('port', process.env.PORT || 3000);
-
-//Middlewares
-app.use(express.json());
-
-//Rotas
-app.use('/teste', (req, res) => {
-    res.send("Rota TESTE.");
-});
-
-app.use('/', (req, res) => {
-    res.send("Hello World");
-});
+const usersRoute = require('./routes/usersRoute.js');
+const bodyParser = require('body-parser');
 
 // Configurar CORS
 app.use((req, res, next) => {
@@ -27,8 +13,28 @@ app.use((req, res, next) => {
     next();
 });
 
-//Rota
-app.use('/employee',employeeRouters);
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+//Configurações
+app.set('port', process.env.PORT || 3000);
+
+//Middlewares
+app.use(express.json());
+
+//Rota principal
+app.use('/users', usersRoute);
+
+app.use('/', (req, res) => {
+    res.send("Hello World");
+});
+
+
+//app.use('/login', loginRoute);
 
 app.listen(app.get('port'), () => {
     console.log("Start server on port " + app.get('port'));

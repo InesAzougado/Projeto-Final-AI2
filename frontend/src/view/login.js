@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import axios from 'axios';
 import '../App.css';
 import { data } from 'jquery';
 import swal from 'sweetalert2';
+import axios from 'axios';
 
 window.Swal = swal;
 
@@ -44,10 +44,38 @@ class EditComponent extends React.Component {
     submitHandler = (e) => {
 
         e.preventDefault();
+
+
+        const baseUrl = "http://localhost:3000/users/login"
+
+        const datapost = {
+            email: this.state.email,
+            password: this.state.password
+        };
+
+        axios
+            .post(baseUrl, datapost)
+            .then((response) => {
+                if (response.data.success === true) {
+                    //console.log(response.data.data[0].id_user)
+                    alert("Bem vindo!");
+                    sessionStorage.setItem('id', response.data.data[0].id_user)
+                    window.location.reload(false);
+                }
+                else {
+                    alert("Preencha os campos corretamente");
+                }
+            })
+            .catch((error) => {
+                alert("Error 34 " + error);
+            });
+
+        /*
         let NCliente = this.state.NCliente;
         let Pass = this.state.Pass;
 
         sessionStorage.setItem('NCliente', NCliente);
+        sessionStorage.getItem('NCliente');
 
         fetch("http://localhost:3000/users", {
             method: "POST",
@@ -81,7 +109,7 @@ class EditComponent extends React.Component {
                             })
                     })
                 }
-            })
+            })*/
     }
 
     render() {
@@ -89,7 +117,7 @@ class EditComponent extends React.Component {
             <div class="logincenter">
                 <div class="login-block">
                     <h1>Faça Login</h1>
-                    <form onSubmit={this.handleLogin} ref={c => { this.form = c; }}>
+                    <form onSubmit={this.submitHandler} ref={c => { this.form = c; }}>
                         <div className="form-group">
                             <label htmlFor="email">Número de Cliente</label>
                             <input type="text" className=" form-control" name="email"
@@ -103,10 +131,7 @@ class EditComponent extends React.Component {
                                 validations={[required]} />
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary btn-block"
-                                disabled={this.state.loading}>
-                                {this.state.loading && (<span className="spinner-border spinner-border-sm"></span>
-                                )}
+                            <button className="btn btn-primary btn-block" type="submit">
                                 <span>Login</span>
                             </button>
                         </div>

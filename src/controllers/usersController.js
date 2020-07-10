@@ -2,6 +2,7 @@ var Employee = require('../model/Employee');
 var Role = require('../model/Role');
 var sequelize = require('../model/database');
 const users = require('../model/Employee');
+const { QueryTypes } = require('sequelize');
 
 const controllers = {}
 
@@ -98,6 +99,28 @@ controllers.delete = async (req, res) => {
         where: { id: id }
     })
     res.json({ success: true, deleted: del, message: "Deleted successful" });
+}
+
+//    LOGIN
+controllers.login = async (req, res) =>{
+    var email = req.body.email;
+    var pass = req.body.password;
+    if( email == "" || pass =="")
+    {
+        res.json({ success: false, message: 'Tem de preencher os campos!' });
+    }
+    const login = await sequelize.query("SELECT * FROM users WHERE email='"+email+"' AND pass='"+pass+"'", { type: QueryTypes.SELECT } );
+
+
+    console.log(login)
+
+    if(login.length != 0)
+    {
+        res.json({ success: true, data: login, message: 'Login efectuado com sucesso!' });
+    }
+    else{
+        res.json({success: false, data:login, message:'Tem de preencher os campos corretamente!'});
+    }
 }
 
 module.exports = controllers;
