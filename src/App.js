@@ -26,12 +26,13 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 app.use(express.json());
 
-//Rota principal dos utilizadores
+//Rota principal
 app.use('/users', usersRoute);
 
 app.use('/', (req, res) => {
     res.send("Hello World");
 });
+
 
 //app.use('/login', loginRoute);
 
