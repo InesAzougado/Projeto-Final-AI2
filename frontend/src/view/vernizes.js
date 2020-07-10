@@ -7,7 +7,7 @@ import '../App.css';
 const baseUrl = "http://localhost:3000";
 
 class EditComponent extends React.Component {
-    constructor(props) {
+    /*constructor(props) {
         super(props);
         this.state = {
             dataEmployee: {},
@@ -44,7 +44,8 @@ class EditComponent extends React.Component {
             .catch(error => {
                 alert("Error server: " + error)
             })
-    }
+    }*/
+    
     render() {
         return (
             <div class="vernizesscroll">

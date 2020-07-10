@@ -9,6 +9,8 @@ import Dicas from './view/dicas';
 import Portefolio from './view/portefolio';
 import Marcacoes from './view/marcacoes';
 import Login from './view/login';
+import swal from 'sweetalert2';
+window.Swal = swal;
 
 function App() {
   return (

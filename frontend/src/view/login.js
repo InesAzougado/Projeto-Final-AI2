@@ -3,89 +3,125 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
 import '../App.css';
+import { data } from 'jquery';
+import swal from 'sweetalert2';
 
-const baseUrl = "http://localhost:3000";
+window.Swal = swal;
+
+const required = value => {
+    if (!value) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                Este campo é de preenchimento obrigatório!
+            </div>
+        );
+    }
+};
 
 class EditComponent extends React.Component {
+
     constructor(props) {
         super(props);
+        this.submitHandler = this.submitHandler.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
         this.state = {
-            dataEmployee: {},
-            campName: "",
-            campEmail: "",
-            campPhone: "",
-            campAddress: "",
-            stringRole: "",
-            selectRole: 0
-        }
+            email: "",
+            password: "",
+            loading: false,
+            message: "",
+            roleUser: "",
+        };
     }
-    componentDidMount() {
-        let userId = this.props.match.params.employeeId;
-        const url = baseUrl + "/employee/get/" + userId
-        axios.get(url)
-            .then(res => {
-                if (res.data.success) {
-                    const data = res.data.data[0]
-                    this.setState({
-                        dataEmployee: data,
-                        campName: data.name,
-                        campEmail: data.email,
-                        campPhone: data.phone,
-                        campAddress: data.address,
-                        stringRole: data.role.role,
-                        selectRole: data.roleId
+
+    onChangeEmail(e) {
+        this.setState({ email: e.target.value });
+    }
+    onChangePassword(e) {
+        this.setState({ password: e.target.value });
+    }
+
+    submitHandler = (e) => {
+
+        e.preventDefault();
+        let NCliente = this.state.NCliente;
+        let Pass = this.state.Pass;
+
+        sessionStorage.setItem('NCliente', NCliente);
+
+        fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                NCliente: NCliente,
+                Pass: Pass,
+            })
+        }).then(res => { return res.json() })
+            .then((responseJson) => {
+                if (responseJson.auth === true) {
+                    swal({
+                        title: "Bem-vindo!" + " " + NCliente,
+                        text: "Obrigado"
+                    }).then(function () {
+                        fetch("http://localhost:3000/users/idutilizador", {
+                            method: "POST",
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                NCliente: NCliente,
+                            })
+                        }).then(res => res.json())
+                            .then(data => {
+                                sessionStorage.setItem('idutilizadorsessao', data)
+                            })
                     })
-                    console.log(JSON.stringify(data.role.role))
                 }
-                else {
-                    alert("Error web service")
-                }
-            })
-            .catch(error => {
-                alert("Error server: " + error)
             })
     }
+
     render() {
         return (
             <div class="logincenter">
                 <div class="login-block">
                     <h1>Faça Login</h1>
-                    <form>
-                        <label>Nº de Cliente</label><br></br>
-                        <input type="text" placeholder="" id="username" /><br></br>
-                        <label>Palavra-passe</label><br></br>
-                        <input type="password" placeholder="" id="password" />
-                        <button>Entrar</button>
+                    <form onSubmit={this.handleLogin} ref={c => { this.form = c; }}>
+                        <div className="form-group">
+                            <label htmlFor="email">Número de Cliente</label>
+                            <input type="text" className=" form-control" name="email"
+                                value={this.state.email} onChange={this.onChangeEmail}
+                                validations={[required]} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input type="password" className=" form-control" name="password"
+                                value={this.state.password} onChange={this.onChangePassword}
+                                validations={[required]} />
+                        </div>
+                        <div className="form-group">
+                            <button className="btn btn-primary btn-block"
+                                disabled={this.state.loading}>
+                                {this.state.loading && (<span className="spinner-border spinner-border-sm"></span>
+                                )}
+                                <span>Login</span>
+                            </button>
+                        </div>
+                        {this.state.message && (
+                            <div className="form-group">
+                                <div className="alert alert-danger" role="alert">
+                                    {this.state.message}
+                                </div>
+                            </div>
+                        )}
                     </form>
                 </div>
             </div>
         );
     }
-
-    sendUpdate() {
-        // get parameter id
-        let userId = this.props.match.params.employeeId;
-        // url de backend
-        const url = baseUrl + "/employee/update/" + userId
-        // parametros de datos post
-        const datapost = {
-            name: this.state.campName,
-            email: this.state.campEmail,
-            phone: this.state.campPhone,
-            address: this.state.campAddress,
-            role: this.state.selectRole
-        }
-        axios.post(url, datapost)
-            .then(response => {
-                if (response.data.success === true) {
-                    alert(response.data.message)
-                }
-                else {
-                    alert("Error")
-                }
-            }).catch(error => {
-                alert("Error 34 " + error)
-            })
-    }
 }
+
 export default EditComponent;
