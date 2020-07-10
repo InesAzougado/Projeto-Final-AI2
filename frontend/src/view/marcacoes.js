@@ -114,23 +114,6 @@ class EditComponent extends React.Component {
                             <input type="text" value="nailsbyines@email.com" placeholder="" id="email" readOnly />
                         </form>
                     </div>
-                    <div class="card">
-                        <a href="projeto_rh.html"><table class="table">
-
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col"> </th>
-                                    <th scope="col">Nome Projecto</th>
-                                    <th scope="col">Data Inicio</th>
-                                    <th scope="col">Data Fim</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.loadFillData()}
-                            </tbody>
-
-                        </table></a>
-                    </div>
                 </div>
             </div>
         );
