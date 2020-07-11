@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 var sequelize = require('./database');
 
-var varnizes = sequelize.define('varnizes',
+var vernizes = sequelize.define('vernizes',
     {
         id_vernis: {
             type: Sequelize.INTEGER,
@@ -15,4 +15,4 @@ var varnizes = sequelize.define('varnizes',
     { timestamps: false, }
 );
 
-module.exports = varnizes;
+module.exports = vernizes;
