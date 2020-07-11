@@ -2,6 +2,32 @@
   text-align: center;
 }
 
+.titulos {
+  color: #F1B59D;
+  text-align: center;
+  margin-top: -1%;
+  margin-bottom: -1%;
+  font-family: Laranrini;
+  src: url(../src/font/larianti.otf);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.titulosscroll {
+  margin-top: 2.5%;
+  color: #F1B59D;
+  text-align: center;
+  font-family: Laranrini;
+  src: url(../src/font/larianti.otf);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@font-face{
+  font-family: Laranrini;
+  src: url(../src/font/larianti.otf);
+}
+
 .fundo {
   background-color: #FFE8DF;
   height: 125px;
@@ -48,9 +74,10 @@ li a:hover {
   cursor: pointer;
 }
 
-.active{
-  background-color: #fff9f6;
-  font-weight: 800;
+.videocenter{
+  margin-left: 30%;
+  margin-right: 70%;
+  margin-top: 5%;
 }
 
 .App-logo {
@@ -248,7 +275,7 @@ li a:hover {
 .equipamentos{
   margin-left: 38%;
   margin-right: 40%;
-  margin-top: 3%;
+  margin-top: 4%;
 }
 
 .equipamentos2{
@@ -359,6 +386,7 @@ li a:hover {
 
 .marc-block{
   width: 500px;
+  height: 380px;
   padding: 20px;
   background: #FFE8DF;
   border-radius: 5px;
@@ -370,7 +398,6 @@ li a:hover {
   margin-right: 100px;
   border-color: #696969;
   overflow: auto;
-  height: auto;
 }
 
 #m1 h1{

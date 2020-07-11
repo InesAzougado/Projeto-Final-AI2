@@ -35,7 +35,7 @@ function App() {
 
               <div class="centermenu">
                 <ul id="nav">
-                  <li class="active"><Link to="/inicio">Inicio</Link></li>
+                  <li><Link to="/inicio">Início</Link></li>
                   <li><Link to="/sobre">Sobre</Link></li>
                   <li><Link to="/vernizes">Vernizes</Link></li>
                   <li><Link to="/equipamentos">Equipamentos</Link></li>
@@ -101,7 +101,7 @@ function App() {
 
               <div class="centermenu">
                 <ul id="nav">
-                  <li class="active"><Link to="/inicio">Inicio</Link></li>
+                  <li><Link to="/inicio">Início</Link></li>
                   <li><Link to="/sobre">Sobre</Link></li>
                   <li><Link to="/vernizes">Vernizes</Link></li>
                   <li><Link to="/equipamentos">Equipamentos</Link></li>

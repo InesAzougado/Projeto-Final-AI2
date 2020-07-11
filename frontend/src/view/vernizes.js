@@ -33,6 +33,7 @@ class EditComponent extends React.Component {
     render() {
         return (
             <div class="vernizesscroll">
+                <h1 class="titulosscroll">Vernizes</h1>
                 <div class="centerscroll">
                     <div class="container-fluid">
                         <div class="row">
@@ -70,10 +71,10 @@ class EditComponent extends React.Component {
 }
 export default EditComponent;
 
-                /*<tr>
-                    <th scope="row"><img class="photo" src={perfil} /></th>
-                    <td>{data.Nome} <div><a href="verperfil_dev.html"></a></div></td>
-                    <td>{data.AnosEmpresa}</td>
-                    <td>{data.TipoUser}</td>
-                    <td><button type="button" class="btn btn-info"><Link to={"/verperfil_rh/" + data.ID_User} >Info</Link></button></td>
-                </tr>*/
+/*<tr>
+    <th scope="row"><img class="photo" src={perfil} /></th>
+    <td>{data.Nome} <div><a href="verperfil_dev.html"></a></div></td>
+    <td>{data.AnosEmpresa}</td>
+    <td>{data.TipoUser}</td>
+    <td><button type="button" class="btn btn-info"><Link to={"/verperfil_rh/" + data.ID_User} >Info</Link></button></td>
+</tr>*/

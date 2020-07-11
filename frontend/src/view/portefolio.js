@@ -7,47 +7,10 @@ import '../App.css';
 const baseUrl = "http://localhost:3000";
 
 class EditComponent extends React.Component {
-    /*constructor(props) {
-        super(props);
-        this.state = {
-            dataEmployee: {},
-            campName: "",
-            campEmail: "",
-            campPhone: "",
-            campAddress: "",
-            stringRole: "",
-            selectRole: 0
-        }
-    }
-    componentDidMount() {
-        let userId = this.props.match.params.employeeId;
-        const url = baseUrl + "/employee/get/" + userId
-        axios.get(url)
-            .then(res => {
-                if (res.data.success) {
-                    const data = res.data.data[0]
-                    this.setState({
-                        dataEmployee: data,
-                        campName: data.name,
-                        campEmail: data.email,
-                        campPhone: data.phone,
-                        campAddress: data.address,
-                        stringRole: data.role.role,
-                        selectRole: data.roleId
-                    })
-                    console.log(JSON.stringify(data.role.role))
-                }
-                else {
-                    alert("Error web service")
-                }
-            })
-            .catch(error => {
-                alert("Error server: " + error)
-            })
-    }*/
     render() {
         return (
             <div class="vernizesscroll">
+                <h1 class="titulosscroll">Portefólio</h1>
                 <div class="centerscroll">
                     <div class="container-fluid">
                         <div class="row">
@@ -60,97 +23,7 @@ class EditComponent extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

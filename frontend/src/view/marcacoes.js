@@ -5,29 +5,12 @@ import axios from 'axios';
 import '../App.css';
 
 class EditComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            listausers: []
-        }
-    }
-    componentDidMount() {
-        const url = "http://localhost:3000/employee/listar";
-        axios.get(url)
-            .then(res => {
-                if (res.data.sucess) {
-                    const data = res.data.data;
-                    this.setState({ listausers: data });
-                } else {
-                    alert("Error Web Service!");
-                }
-            })
-            .catch(error => {
-                alert(error);
-            });
-    }
     render() {
         return (
+            <div class="logincenter">
+
+                <h1 class="titulos">Marcações</h1>
+
             <div>
                 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
                 <div class="marccenter">
@@ -115,6 +98,7 @@ class EditComponent extends React.Component {
                         </form>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }
