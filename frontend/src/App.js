@@ -14,6 +14,7 @@ import Inicio from './view/inicio';
 import swal from 'sweetalert2';
 window.Swal = swal;
 
+
 function App() {
   console.log(!sessionStorage.getItem('id'));
   if (!sessionStorage.getItem('id')) {

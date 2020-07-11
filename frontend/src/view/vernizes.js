@@ -58,6 +58,7 @@ class EditComponent extends React.Component {
                 <div class="card">
                     <div class="cardimg">
                         <div class="overlay">
+                            <img src="https://i.ibb.co/JCybKjS/PRINCESA.png" width="178px" height="180px"></img>
                         </div>
                     </div>
                     <footer class="carddesc">
@@ -70,11 +71,3 @@ class EditComponent extends React.Component {
     }
 }
 export default EditComponent;
-
-/*<tr>
-    <th scope="row"><img class="photo" src={perfil} /></th>
-    <td>{data.Nome} <div><a href="verperfil_dev.html"></a></div></td>
-    <td>{data.AnosEmpresa}</td>
-    <td>{data.TipoUser}</td>
-    <td><button type="button" class="btn btn-info"><Link to={"/verperfil_rh/" + data.ID_User} >Info</Link></button></td>
-</tr>*/

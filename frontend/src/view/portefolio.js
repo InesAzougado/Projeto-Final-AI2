@@ -17,7 +17,7 @@ class EditComponent extends React.Component {
                             <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
                                 <div class="conteudodiv" id="1">
 
-                                    <div class="card">
+                                    <div class="card2">
                                         <div class="cardimgportfolio">
                                             <div class="overlay">
                                             </div>
