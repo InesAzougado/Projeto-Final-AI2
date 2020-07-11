@@ -1,10 +1,10 @@
-var Sequelize = require('sequelize');
+/*var Sequelize = require('sequelize');
 var sequelize = require('./database');
 const marcacoes = require('./marcacoes');
 
 var estados = sequelize.define('estados',
     {
-        id_marcacao: {
+        d_marcacao: {
             type: Sequelize.INTEGER,
             
             //DIZER A TABELA E COLUNA
@@ -21,4 +21,4 @@ var estados = sequelize.define('estados',
 
 estados.belongsTo(marcacoes)
 
-module.exports = estados;
+module.exports = estados;*/
