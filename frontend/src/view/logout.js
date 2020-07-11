@@ -13,9 +13,9 @@ class EditComponent extends React.Component {
     render() {
         return (
             <div class="logincenter">
-
-                <h1 class="titulos">Entra e faz a tua marcação</h1>
                 
+                 <h1>CLIQUE EM LOGIN PARA EFETUAR O SEU LOGIN!!!!</h1>
+
             </div>
         );
     }
