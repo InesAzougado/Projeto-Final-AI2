@@ -1,30 +1,30 @@
 var Sequelize = require('sequelize');
 var sequelize = require('./database');
-const users = require('./users');
+const clientes = require('./clientes');
 
-var clientes = sequelize.define('clientes',
+var marcacoes = sequelize.define('marcacoes',
     {
-        id_cliente: {
+        id_marcacao: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoincrement: true,
         },
-        id_user: {
+        id_cliente: {
             type: Sequelize.INTEGER,
             
             //DIZER A TABELA E COLUNA
 
             references:{
-                model: users,
-                key: 'id_user'
+                model: clientes,
+                key: 'id_cliente'
             }
         },
-        nome: Sequelize.STRING,
-        n_telemovel: Sequelize.INTEGER,
+        data: Sequelize.DATE,
+        hora: Sequelize.STRING,
     },
     { timestamps: false, }
 );
 
-clientes.belongsTo(users)
+marcacoes.belongsTo(clientes)
 
-module.exports = clientes;
+module.exports = marcacoes;
