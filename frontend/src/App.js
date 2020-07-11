@@ -14,6 +14,10 @@ import Inicio from './view/inicio';
 import swal from 'sweetalert2';
 window.Swal = swal;
 
+function Logout() {
+  sessionStorage.clear();
+}
+
 function App() {
   console.log(!sessionStorage.getItem('id'));
   if (!sessionStorage.getItem('id')) {
@@ -95,7 +99,7 @@ function App() {
               </div>
               <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="login">
-                  <Link to="/logout"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Logout"></img> Logout </Link>
+                  <Link to="/logout" onClick={this.Logout}><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Logout"></img> Logout </Link>
                 </div>
               </div>
 
