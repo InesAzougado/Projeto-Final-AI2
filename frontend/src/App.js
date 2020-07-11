@@ -67,6 +67,7 @@ function App() {
       </div>
       </div>
 
+      <Route path="/" exact component={Sobre}/> 
       <Route path="/sobre" exact component={Sobre}/> 
       <Route path="/vernizes" exact component={Vernizes}/> 
       <Route path="/equipamentos" exact component={Equipamentos}/>
