@@ -48,6 +48,11 @@ li a:hover {
   cursor: pointer;
 }
 
+.active{
+  background-color: #fff9f6;
+  font-weight: 800;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
