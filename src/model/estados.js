@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 var sequelize = require('./database');
 const marcacoes = require('./marcacoes');
 
-var estado = sequelize.define('estado',
+var estados = sequelize.define('estados',
     {
         id_marcacao: {
             type: Sequelize.INTEGER,
@@ -14,11 +14,11 @@ var estado = sequelize.define('estado',
                 key: 'id_marcacao'
             }
         },
-        estado: Sequelize.STRING,
+        estados: Sequelize.STRING,
     },
     { timestamps: false, }
 );
 
-estado.belongsTo(marcacoes)
+estados.belongsTo(marcacoes)
 
-module.exports = estado;
+module.exports = estados;
