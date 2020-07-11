@@ -2,6 +2,7 @@ var sequelize = require('../model/database');
 const users = require('../model/users');
 const clientes = require('../model/clientes');
 const marcacoes = require('../model/marcacoes');
+const varnizes = require('../model/varnizes');
 const { QueryTypes } = require('sequelize');
 
 const controllers = {}
