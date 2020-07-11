@@ -1,6 +1,6 @@
 var Sequelize = require('sequelize');
 var sequelize = require('./database');
-//const clientes = require('./clientes');
+const clientes = require('./clientes');
 
 var marcacoes = sequelize.define('marcacoes',
     {
@@ -9,7 +9,7 @@ var marcacoes = sequelize.define('marcacoes',
             primaryKey: true,
             autoincrement: true,
         },
-        /*id_cliente: {
+        id_cliente: {
             type: Sequelize.INTEGER,
             
             //DIZER A TABELA E COLUNA
@@ -18,13 +18,13 @@ var marcacoes = sequelize.define('marcacoes',
                 model: clientes,
                 key: 'id_cliente'
             }
-        },*/
+        },
         data: Sequelize.DATE,
         hora: Sequelize.STRING,
     },
     { timestamps: false, }
 );
 
-//marcacoes.belongsTo(clientes)
+marcacoes.belongsTo(clientes)
 
 module.exports = marcacoes;
