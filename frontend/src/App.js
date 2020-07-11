@@ -9,6 +9,7 @@ import Dicas from './view/dicas';
 import Portefolio from './view/portefolio';
 import Marcacoes from './view/marcacoes';
 import Login from './view/login';
+import Logout from './view/logout';
 import swal from 'sweetalert2';
 window.Swal = swal;
 
@@ -92,7 +93,7 @@ function App() {
               </div>
               <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="login">
-                <Link to="/login"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Login"></img> Login </Link>
+                <Link to="/login"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Login"></img> Logout </Link>
                 </div>
               </div>
   
@@ -138,7 +139,7 @@ function App() {
         <Route path="/dicas" exact component={Dicas}/> 
         <Route path="/portefolio" exact component={Portefolio}/> 
         <Route path="/marcacoes" exact component={Marcacoes}/>  
-        <Route path="/login" exact component={Login}/>  
+        <Route path="/logout" exact component={Logout}/>  
   
       </Router>
     );
