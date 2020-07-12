@@ -14,8 +14,6 @@ class EditComponent extends React.Component {
         return (
             <div class="logincenter">
                 
-                 <h1>CLIQUE EM LOGIN PARA EFETUAR O SEU LOGIN!!!!</h1>
-
             </div>
         );
     }
