@@ -15,4 +15,6 @@ router.get('/listar_equipamentos', vernizesRoute.listar_equipamentos)
 
 router.get('/listar_portefolio', vernizesRoute.listar_portefolio)
 
+router.get('/listar_dicas', vernizesRoute.listar_dicas)
+
 module.exports = router;

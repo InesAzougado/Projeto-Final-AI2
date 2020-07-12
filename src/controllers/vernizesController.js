@@ -3,6 +3,7 @@ const vernizes = require('../model/vernizes');
 const { QueryTypes } = require('sequelize');
 const equipamentos = require('../model/equipamentos');
 const portefolio = require('../model/portefolio');
+const dicas = require('../model/dicas');
 
 const controllers = {}
 
@@ -50,4 +51,17 @@ controllers.listar_portefolio = async (req, res) => {
     res.json({ sucess: true, data: data });
 }
 
+/*-------- LISTAR DICAS ----------*/
+
+controllers.listar_dicas = async (req, res) => {
+    const data = await dicas.findAll({
+    })
+        .then(function (data) {
+            return data;
+        })
+        .catch(error => {
+            return error;
+        });
+    res.json({ sucess: true, data: data });
+}
 module.exports = controllers;

@@ -33,6 +33,9 @@
 }
 
 h6{
+  color: #F1B59D;
+  font-weight: bold;
+  font-size: 15px;
   font-family: Larianti;
   src: url(../src/font/larianti.otf);
 }
