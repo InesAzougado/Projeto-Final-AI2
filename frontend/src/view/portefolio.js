@@ -4,9 +4,31 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
 import '../App.css';
 
-const baseUrl = "http://localhost:3000";
 
 class EditComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            listPortefolio: []
+        }
+    }
+    componentDidMount() {
+        const url = "http://localhost:3000/users/listar_portefolio";
+        axios.get(url)
+            .then(res => {
+                if (res.data.sucess) {
+                    const data = res.data.data;
+                    this.setState({ listPortefolio: data });
+                } else {
+                    alert("Error Web Service!");
+                }
+            })
+            .catch(error => {
+                alert(error);
+            });
+    }
+
     render() {
         return (
             <div class="vernizesscroll">
@@ -17,13 +39,8 @@ class EditComponent extends React.Component {
                             <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
                                 <div class="conteudodiv" id="1">
 
-                                    <div class="card2">
-                                        <div class="cardimgportfolio">
-                                            <div class="overlay">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    {this.loadFillData()}
+
                                 </div>
                             </div>
                         </div>
@@ -33,30 +50,19 @@ class EditComponent extends React.Component {
         );
     }
 
-    sendUpdate() {
-        // get parameter id
-        let userId = this.props.match.params.employeeId;
-        // url de backend
-        const url = baseUrl + "/employee/update/" + userId
-        // parametros de datos post
-        const datapost = {
-            name: this.state.campName,
-            email: this.state.campEmail,
-            phone: this.state.campPhone,
-            address: this.state.campAddress,
-            role: this.state.selectRole
-        }
-        axios.post(url, datapost)
-            .then(response => {
-                if (response.data.success === true) {
-                    alert(response.data.message)
-                }
-                else {
-                    alert("Error")
-                }
-            }).catch(error => {
-                alert("Error 34 " + error)
-            })
+    loadFillData() {
+        return this.state.listPortefolio.map((data, index) => {
+            return (
+
+                <div class="card2">
+                    <div class="cardimgportfolio">
+                        <div class="overlay">
+                        <img class="zoom" src={data.img} width="180px" height="180px"></img>
+                        </div>
+                    </div>
+                </div>
+            )
+        });
     }
 }
 export default EditComponent;

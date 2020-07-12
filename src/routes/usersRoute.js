@@ -11,4 +11,8 @@ router.post('/login', usersRoute.login)
 
 router.get('/listar_vernizes', vernizesRoute.listar_vernizes)
 
+router.get('/listar_equipamentos', vernizesRoute.listar_equipamentos)
+
+router.get('/listar_portefolio', vernizesRoute.listar_portefolio)
+
 module.exports = router;

@@ -3,6 +3,8 @@ const users = require('../model/users');
 const clientes = require('../model/clientes');
 const marcacoes = require('../model/marcacoes');
 const vernizes = require('../model/vernizes');
+const equipamentos = require('../model/equipamentos');
+const portefolio = require('../model/portefolio');
 const { QueryTypes } = require('sequelize');
 
 const controllers = {}

@@ -14,7 +14,6 @@ import Inicio from './view/inicio';
 import swal from 'sweetalert2';
 window.Swal = swal;
 
-
 function App() {
   console.log(!sessionStorage.getItem('id'));
   if (!sessionStorage.getItem('id')) {
@@ -39,7 +38,7 @@ function App() {
                   <li><Link to="/inicio">Início</Link></li>
                   <li><Link to="/sobre">Sobre</Link></li>
                   <li><Link to="/vernizes">Vernizes</Link></li>
-                  <li><Link to="/equipamentos">Equipamentos</Link></li>
+                  <li><Link to="/equipamentos">Acessórios</Link></li>
                   <li><Link to="/dicas">Dicas</Link></li>
                   <li><Link to="/portefolio">Portefólio</Link></li>
                 </ul>
@@ -105,7 +104,7 @@ function App() {
                   <li><Link to="/inicio">Início</Link></li>
                   <li><Link to="/sobre">Sobre</Link></li>
                   <li><Link to="/vernizes">Vernizes</Link></li>
-                  <li><Link to="/equipamentos">Equipamentos</Link></li>
+                  <li><Link to="/equipamentos">Acessórios</Link></li>
                   <li><Link to="/dicas">Dicas</Link></li>
                   <li><Link to="/portefolio">Portefólio</Link></li>
                   <li><Link to="/marcacoes">Marcações</Link></li>

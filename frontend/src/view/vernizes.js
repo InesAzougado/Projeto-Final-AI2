@@ -58,7 +58,7 @@ class EditComponent extends React.Component {
                 <div class="card">
                     <div class="cardimg">
                         <div class="overlay">
-                            <img src="https://i.ibb.co/JCybKjS/PRINCESA.png" width="178px" height="180px"></img>
+                            <img src={data.img} width="178px" height="180px"></img>
                         </div>
                     </div>
                     <footer class="carddesc">

@@ -7,25 +7,45 @@
   text-align: center;
   margin-top: -1%;
   margin-bottom: -1%;
-  font-family: Laranrini;
+  font-family: Larianti;
   src: url(../src/font/larianti.otf);
   font-weight: bold;
   font-size: 20px;
+}
+
+.linharosinha {
+  display: block;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 2px;
+  border-color: #F1B59D;
 }
 
 .titulosscroll {
   margin-top: 2.5%;
   color: #F1B59D;
   text-align: center;
-  font-family: Laranrini;
+  font-family: Larianti;
   src: url(../src/font/larianti.otf);
   font-weight: bold;
   font-size: 20px;
 }
 
+h6{
+  font-family: Larianti;
+  src: url(../src/font/larianti.otf);
+}
+
 @font-face{
   font-family: Laranrini;
   src: url(../src/font/larianti.otf);
+}
+
+/*----------ZOOM----------*/
+
+.zoom:hover {
+  transform: scale(1.8); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .fundo {
@@ -209,7 +229,7 @@ li a:hover {
 
 .textsobre {
   font-size: 13px;
-  margin-top: -205px;
+  margin-top: -195px;
   margin-left: 100px;
   width: 500px;
   text-align: justify;
@@ -295,6 +315,7 @@ li a:hover {
 
 .equipamentos img{
   width: 300px;
+  height: auto;
   border-radius: 10px;
   margin-left: -250px;
 }
