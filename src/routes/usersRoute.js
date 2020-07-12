@@ -9,6 +9,8 @@ const vernizesRoute = require('../controllers/vernizesController');
 
 router.post('/login', usersRoute.login)
 
+router.post('/add_marcacao', usersRoute.add_marcacao)
+
 router.get('/listar_vernizes', vernizesRoute.listar_vernizes)
 
 router.get('/listar_equipamentos', vernizesRoute.listar_equipamentos)

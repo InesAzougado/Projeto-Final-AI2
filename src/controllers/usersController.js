@@ -13,6 +13,26 @@ const controllers = {}
 
 sequelize.sync()
 
+/*-------- ADICIONAR MARCAÇÃO ----------*/
+
+controllers.add_marcacao = async (req, res) => {
+    const { data_marcacao, hora} = req.body;
+    let data;
+    const response = await sequelize.sync().then(function () {  
+        marcacoes.create({
+            data_marcacao: datas,
+            hora: hora,
+        });
+        const data = marcacoes.findAll();
+        return data;
+    })
+        .catch(err => {
+            return err;
+        });
+    res.json({ sucess: true, data: data, message: "marcacao criada com sucesso!!" });
+}
+
+
 /*-------- LOGIN ----------*/
 
 controllers.login = async (req, res) =>{
@@ -32,7 +52,7 @@ controllers.login = async (req, res) =>{
         res.json({ success: true, data: login, message: 'Login efectuado com sucesso!' });
     }
     else{
-        res.json({success: false, data:login, message:'Tem de preencher os campos corretamente!'});
+        res.json({success: false, data:login, message:'Preencha os campos corretamente!'});
     }
 }
 

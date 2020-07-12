@@ -60,7 +60,7 @@ class EditComponent extends React.Component {
                     //console.log(response.data.data[0].id_user)
                     alert("Bem vindo!");
                     sessionStorage.setItem('id', response.data.data[0].id_user)
-                    sessionStorage.setItem('id', response.data.data[0].id_user) //seria tipo
+                    sessionStorage.setItem('tipo_user', response.data.data[0].tipo,) //seria tipo
                     window.location.reload(false);
                 }
                 else {
