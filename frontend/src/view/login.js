@@ -60,7 +60,7 @@ class EditComponent extends React.Component {
                     //console.log(response.data.data[0].id_user)
                     alert("Bem vindo!");
                     sessionStorage.setItem('id', response.data.data[0].id_user)
-                    sessionStorage.setItem('id', response.data.data[0].id_user) //seria tipo
+                    sessionStorage.setItem('tipu', response.data.data[0].tipo) //mardar o tipo
                     window.location.reload(false);
                 }
                 else {
@@ -76,6 +76,7 @@ class EditComponent extends React.Component {
     render() {
         return (
             <div class="logincenter">
+                <br></br>
                 <div class="login-block">
                     <h1>Faça Login</h1>
                     <form onSubmit={this.submitHandler} ref={c => { this.form = c; }}>
