@@ -40,7 +40,7 @@ class EditComponent extends React.Component {
                                 <div class="conteudodiv" id="1">
 
                                     {this.loadFillData()}
-
+                                    <br></br><br></br><br></br><br></br>
                                 </div>
                             </div>
                         </div>

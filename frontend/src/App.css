@@ -16,8 +16,8 @@
 .linharosinha {
   display: block;
   margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-right: -91%;
+  margin-left: -78%;
   border-width: 2px;
   border-color: #F1B59D;
 }
@@ -220,7 +220,7 @@ li a:hover {
 .sobre{
   position: absolute;
   left: 60%;
-  top: 53%;
+  top: 45%;
   transform: translate(-50%, -50%);
 }
 
@@ -345,6 +345,16 @@ li a:hover {
 
 .conteudodiv {
   margin-top: 30px;
+}
+
+.vernigelcenter{
+  margin-left: 37%;
+  color: #696969;
+}
+
+.vernigelcenter2{
+  margin-left: 42.4%;
+  color: #696969;
 }
 
 /* -------- LOGIN -------- */

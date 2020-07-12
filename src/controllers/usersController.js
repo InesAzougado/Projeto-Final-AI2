@@ -6,6 +6,7 @@ const vernizes = require('../model/vernizes');
 const equipamentos = require('../model/equipamentos');
 const portefolio = require('../model/portefolio');
 const dicas = require('../model/dicas');
+const sobre = require('../model/sobre');
 const { QueryTypes } = require('sequelize');
 
 const controllers = {}

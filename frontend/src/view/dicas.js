@@ -36,7 +36,7 @@ class EditComponent extends React.Component {
                 <h1 class="titulosscroll">Dicas</h1>
 
                 {this.loadFillData()}
-
+                <br></br><br></br><p class="vernigelcenter2">Imagens de © Cristina Vernigel</p><br></br>
             </div>
         );
     }

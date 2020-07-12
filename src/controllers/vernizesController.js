@@ -4,6 +4,7 @@ const { QueryTypes } = require('sequelize');
 const equipamentos = require('../model/equipamentos');
 const portefolio = require('../model/portefolio');
 const dicas = require('../model/dicas');
+const sobre = require('../model/sobre');
 
 const controllers = {}
 
@@ -64,4 +65,19 @@ controllers.listar_dicas = async (req, res) => {
         });
     res.json({ sucess: true, data: data });
 }
+
+/*-------- LISTAR SOBRE ----------*/
+
+controllers.listar_sobre = async (req, res) => {
+    const data = await sobre.findAll({
+    })
+        .then(function (data) {
+            return data;
+        })
+        .catch(error => {
+            return error;
+        });
+    res.json({ sucess: true, data: data });
+}
+
 module.exports = controllers;

@@ -7,6 +7,28 @@ import '../App.css';
 const baseUrl = "http://localhost:3000";
 
 class EditComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            listSobre: []
+        }
+    }
+    componentDidMount() {
+        const url = "http://localhost:3000/users/listar_sobre";
+        axios.get(url)
+            .then(res => {
+                if (res.data.sucess) {
+                    const data = res.data.data;
+                    this.setState({ listSobre: data });
+                } else {
+                    alert("Error Web Service!");
+                }
+            })
+            .catch(error => {
+                alert(error);
+            });
+    }
     
     render() {
         return (
@@ -14,49 +36,27 @@ class EditComponent extends React.Component {
 
                 <h1 class="titulos">Sobre</h1>
 
-                <div class="sobre">
-                    <div>
-                        <img src="https://i.ibb.co/KxH8m8P/manicure-profissional.jpg"></img>
-                    </div>
-                    <div class="textsobre">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt molestie velit eu vulputate.
-                        Mauris lacinia dui sed nunc suscipit sodales. Aenean ornare eu neque venenatis porttitor.
-                        Curabitur molestie feugiat nisi. Nam viverra, tortor ut semper luctus, urna lectus faucibus diam,
-                        vel vehicula massa tortor nec enim. Nunc finibus erat sed dolor egestas, eget mattis elit condimentum.
-                        Curabitur scelerisque nec neque sed tempus. Nam porttitor, lacus in congue ullamcorper, ex ipsum dapibus risus,
-                        sed cursus diam nibh sed nisi. Phasellus aliquet diam eu metus molestie accumsan. Duis consectetur vehicula
-                        interdum. Quisque efficitur, sapien et tristique condimentum, velit eros lobortis urna, vitae commodo magna nibh
-                    sed leo. Suspendisse odio mi, pellentesque non bibendum nec, rhoncus eget erat.</p>
-                    </div>
-                </div>
+                {this.loadFillData()}
+                
             </div>
         );
     }
 
-    sendUpdate() {
-        // get parameter id
-        let userId = this.props.match.params.employeeId;
-        // url de backend
-        const url = baseUrl + "/employee/update/" + userId
-        // parametros de datos post
-        const datapost = {
-            name: this.state.campName,
-            email: this.state.campEmail,
-            phone: this.state.campPhone,
-            address: this.state.campAddress,
-            role: this.state.selectRole
-        }
-        axios.post(url, datapost)
-            .then(response => {
-                if (response.data.success === true) {
-                    alert(response.data.message)
-                }
-                else {
-                    alert("Error")
-                }
-            }).catch(error => {
-                alert("Error 34 " + error)
-            })
-    }
+    loadFillData() {
+        return this.state.listSobre.map((data, index) => {
+            return (
+
+                <div class="sobre">
+                    <div>
+                        <img src={data.img}></img>
+                    </div>
+                    <div class="textsobre">
+                        <p>{data.desc}</p>
+                    </div>
+                </div>
+            )
+        });
+    }    
 }
+
 export default EditComponent;

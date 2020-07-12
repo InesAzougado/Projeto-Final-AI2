@@ -14,8 +14,17 @@ import Inicio from './view/inicio';
 import swal from 'sweetalert2';
 window.Swal = swal;
 
+/*function doLogin(){
+  sessionStorage.clear();
+}*/
+
 function App() {
   console.log(!sessionStorage.getItem('id'));
+  function logOut1() {
+    console.log(sessionStorage.getItem('id')) //tipo = admin ou cli 
+    sessionStorage.clear()
+    window.location.href = '/inicio'
+  }
   if (!sessionStorage.getItem('id')) {
     return (
       <Router>
@@ -95,7 +104,7 @@ function App() {
               </div>
               <div class="fundobranco col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="login">
-                  <Link to="/logout"><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Logout"></img> Logout </Link>
+                  <Link to="/logout" onClick={() => { logOut1() }}><img src="https://i.ibb.co/DtrFdt4/login.png" width="20px" alt="Logout"></img> Logout </Link>
                 </div>
               </div>
 

@@ -41,7 +41,7 @@ class EditComponent extends React.Component {
                                 <div class="conteudodiv" id="1">
 
                                     {this.loadFillData()}
-
+                                    <br></br><br></br><p class="vernigelcenter">Imagens de © Cristina Vernigel</p><br></br>
                                 </div>
                             </div>
                         </div>
