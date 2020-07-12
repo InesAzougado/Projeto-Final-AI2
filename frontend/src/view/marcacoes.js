@@ -5,18 +5,6 @@ import axios from 'axios';
 import '../App.css';
 
 class EditComponent extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            campo_id_marcacao: "",
-            campo_id_cliente: "",
-            campo_data: "",
-            campo_hora: "",
-            campo_estado: ""
-        }
-    }
-
     render() {
         return (
             <div class="logincenter">
@@ -30,11 +18,56 @@ class EditComponent extends React.Component {
                         <form>
                             <h1>Faça a sua Marcação aqui</h1>
                             <label>Escolher data</label><br></br>
-                            <input type="date" placeholder="" id="nome" value={this.state.campo_data} onChange={(value) =>
-                                                        this.setState({ campo_data: value.target.value })} required />
-
-                            <select name="hora" id="hora" value={this.state.campo_hora} onChange={(value) =>
-                                                        this.setState({ campo_hora: value.target.value })} required>
+                            <select name="mes" id="mes" required>
+                                <option disabled selected>Mês</option>
+                                <option>Janeiro</option>
+                                <option>Fevereiro</option>
+                                <option>Março</option>
+                                <option>Abril</option>
+                                <option>Maio</option>
+                                <option>Junho</option>
+                                <option>Julho</option>
+                                <option>Agosto</option>
+                                <option>Setembro</option>
+                                <option>Outubro</option>
+                                <option>Novembro</option>
+                                <option>Dezembro</option>
+                            </select>
+                            <select name="dia" id="dia" required>
+                                <option disabled selected>Dia</option>
+                                <option>01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                            <select name="hora" id="hora" required>
                                 <option disabled selected>Hora</option>
                                 <option>9:00-10:00</option>
                                 <option>10:00-11:00</option>
@@ -45,15 +78,20 @@ class EditComponent extends React.Component {
                                 <option>16:00-17:00</option>
                                 <option>17:00-18:00</option>
                             </select><br></br>
-                            <br></br><button type="submit" onClick={() => this.sendSave()}>Guardar</button>
+
+                            <label>Nome</label><br></br>
+                            <input type="text" placeholder="" id="nome" required /><br></br>
+                            <label>Telemóvel</label><br></br>
+                            <input type="text" min="9" max="9" placeholder="" id="tele" required />
+                            <br></br><button>Solicitar Marcação</button>
                         </form>
                     </div>
                     <div class="marc-block" id="m2">
                         <form>
                             <h1>Histórico de Marcações</h1><br></br>
                             <label>Data e Estado</label><br></br>
-                            <input type="text" placeholder="" id="data" readOnly/>
-                            <input type="text" placeholder="" id="estado" readOnly/><br></br><br></br>
+                            <input type="text" placeholder="" id="data" />
+                            <input type="text" placeholder="" id="estado" /><br></br><br></br>
                             <label>Contacte-nos</label><br></br>
                             <input type="text" value="123456789" placeholder="" id="tele" readOnly />
                             <input type="text" value="nailsbyines@email.com" placeholder="" id="email" readOnly />
@@ -63,34 +101,6 @@ class EditComponent extends React.Component {
             </div>
             </div>
         );
-    }
-
-    sendSave() {
-        if (this.state.campo_data === "") {
-            alert("Insert Name!")
-        }
-        else if (this.state.campo_=== "") {
-            alert("Insert Email!")
-        }
-        else {
-            const baseUrl = "http://localhost:3000/users/add_marcacao"
-            const datapost = {
-                data_marcacao: this.state.campo_data,
-                hora: this.state.campo_hora,
-            }
-
-            axios.post(baseUrl, datapost)
-                .then(response => {
-                    if (response.data.sucess === true) {
-                        alert(response.data.message)
-                    }
-                    else {
-                        alert(response.data.message)
-                    }
-                }).catch(error => {
-                    alert("Error 34 " + error)
-                })
-        }
     }
 
     loadFillData() {

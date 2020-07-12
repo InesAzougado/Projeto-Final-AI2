@@ -7,7 +7,7 @@ var marcacoes = sequelize.define('marcacoes',
         id_marcacao: {
             type: Sequelize.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
+            autoincrement: true,
         },
         id_cliente: {
             type: Sequelize.INTEGER,
@@ -19,9 +19,8 @@ var marcacoes = sequelize.define('marcacoes',
                 key: 'id_cliente'
             }
         },
-        data_marcacao: Sequelize.STRING,
+        data: Sequelize.DATE,
         hora: Sequelize.STRING,
-        estado: Sequelize.STRING,
     },
     { timestamps: false, }
 );
