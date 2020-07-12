@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //Configurações
-app.set('port', process.env.PORT || 9000);
+app.set('port', process.env.PORT || 3000);
 
 //Middlewares
 app.use(express.json());
