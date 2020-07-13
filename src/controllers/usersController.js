@@ -77,4 +77,21 @@ controllers.add_user = async (req, res) => {
     res.json({ sucess: true, data: data, message: "Marcacao solicitada com sucesso!!" });
 }
 
+/*-------- INFORMAÇÃO USER ----------*/
+
+controllers.user_profile = async (req, res) => {
+    const { id } = req.params;
+    const data = await users.findAll({
+        where: { id_user: id },
+
+    })
+        .then(function (data) {
+            return data;
+        })
+        .catch(error => {
+            return error;
+        })
+    res.json({ sucess: true, data: data });
+}
+
 module.exports = controllers;

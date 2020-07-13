@@ -12,6 +12,8 @@ import Login from './view/login';
 import Logout from './view/logout';
 import Inicio from './view/inicio';
 import Registar from './view/registar';
+import Perfile from './view/perfile';
+import Gestao from './view/gestao';
 import swal from 'sweetalert2';
 window.Swal = swal;
 
@@ -115,7 +117,8 @@ function App() {
                   <li><Link to="/equipamentos">Acessórios</Link></li>
                   <li><Link to="/dicas">Dicas</Link></li>
                   <li><Link to="/portefolio">Portefólio</Link></li>
-                  <li><Link to="/marcacoes">Gerir</Link></li>
+                  <li><Link to="/perfile">Perfil</Link></li>
+                  <li><Link to="/gestao">Gerir</Link></li>
                 </ul>
               </div>
 
@@ -150,9 +153,10 @@ function App() {
         <Route path="/equipamentos" exact component={Equipamentos} />
         <Route path="/dicas" exact component={Dicas} />
         <Route path="/portefolio" exact component={Portefolio} />
-        <Route path="/marcacoes" exact component={Marcacoes} />
+        <Route path="/gestao" exact component={Gestao} />
         <Route path="/logout" exact component={Logout} />
         <Route path="/inicio" exact component={Inicio} />
+        <Route path="/perfile" exact component={Perfile} />
 
       </Router>
     );
@@ -181,6 +185,7 @@ function App() {
                   <li><Link to="/equipamentos">Acessórios</Link></li>
                   <li><Link to="/dicas">Dicas</Link></li>
                   <li><Link to="/portefolio">Portefólio</Link></li>
+                  <li><Link to="/perfile">Perfil</Link></li>
                   <li><Link to="/marcacoes">Marcações</Link></li>
                 </ul>
               </div>
@@ -219,6 +224,7 @@ function App() {
         <Route path="/marcacoes" exact component={Marcacoes} />
         <Route path="/logout" exact component={Logout} />
         <Route path="/inicio" exact component={Inicio} />
+        <Route path="/perfile" exact component={Perfile} />
 
       </Router>
     );

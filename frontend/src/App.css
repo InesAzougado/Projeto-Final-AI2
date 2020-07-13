@@ -450,6 +450,16 @@ li a:hover {
   display: inline-block;
 }
 
+.marc-block2{
+  width: 500px;
+  height: 380px;
+  padding: 20px;
+  margin-left: 7%;
+  background: #FFE8DF;
+  border-radius: 5px;
+  display: inline-block;
+}
+
 #m1 {
   text-align: left;
   margin-right: 100px;

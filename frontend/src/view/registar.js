@@ -26,7 +26,7 @@ class EditComponent extends React.Component {
                 <div>
                     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
                     <div class="marccenter">
-                        <div class="marc-block" id="m1">
+                        <div class="marc-block2" id="m1">
                             <form>
                                 <label class="diminuiresp2">Email</label>
                                 <input class="diminuiresp" type="email" placeholder="" id="nome" value={this.state.camp_email} onChange={(value) =>
