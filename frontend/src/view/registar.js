@@ -40,7 +40,7 @@ class EditComponent extends React.Component {
                                 <label class="diminuiresp2">Número de Telemóvel</label>
                                 <input class="diminuiresp" type="text" placeholder="" id="nome" value={this.state.camp_telemovel} onChange={(value) =>
                                     this.setState({ camp_telemovel: value.target.value })} required />
-                                <button type="submit" class="btn btn-primary" onClick={() => this.sendSave()}>Registar</button>
+                                <button type="submit" class="btn btn-primary" onClick={() => this.SaveUser()}>Registar</button>
                             </form>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ class EditComponent extends React.Component {
         );
     }
 
-    sendSave() {
+    SaveUser() {
         if (this.state.camp_0 === "") {
             alert("Insert Nome!")
         }
@@ -68,11 +68,11 @@ class EditComponent extends React.Component {
 
             axios.post(baseUrl, datapost)
                 .then(response => {
-                    if (response.data2.sucess === true) {
-                        alert(response.data2.message)
+                    if (response.data.sucess === true) {
+                        alert(response.data.message)
                     }
                     else {
-                        alert(response.data2.message)
+                        alert(response.data.message)
                     }
                 }).catch(error => {
                     alert("Error 34 " + error)

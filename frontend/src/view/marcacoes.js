@@ -28,9 +28,9 @@ class EditComponent extends React.Component {
                         <form>
                             <h1>Faça a sua Marcação aqui</h1>
                             <label>Escolher data</label><br></br>
-                            <input type="date" placeholder="" id="data" value={this.state.camp_data_marcacao} onChange={(value) =>
+                            <input type="date" placeholder="" id="nome" value={this.state.camp_data_marcacao} onChange={(value) =>
                                                         this.setState({ camp_data_marcacao: value.target.value })} required /><br></br>
-                            <select name="hora" id="hora" value={this.state.camp_hora} onChange={(value) =>
+                            <select name="hora" id="nom" value={this.state.camp_hora} onChange={(value) =>
                                                         this.setState({ camp_hora: value.target.value })} required>
                                 <option disabled selected>Hora</option>
                                 <option>9:00-10:00</option>
