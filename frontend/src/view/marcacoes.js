@@ -9,6 +9,7 @@ class EditComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            camp_id: "",
             camp_data_marcacao: "",
             camp_hora: "",
             camp_estado: "Pendente",
@@ -27,7 +28,6 @@ class EditComponent extends React.Component {
                     <div class="marc-block" id="m1">
                         <form>
                             <h1>Solicite a sua Marcação aqui</h1>
-                            <br></br>
                             <label>Escolher data</label><br></br>
                             <input type="date" placeholder="" id="nome" value={this.state.camp_data_marcacao} onChange={(value) =>
                                                         this.setState({ camp_data_marcacao: value.target.value })} required /><br></br>
@@ -44,6 +44,10 @@ class EditComponent extends React.Component {
                                 <option>17:00-18:00</option>
                             </select>
                             <br></br>
+                            <br></br>
+                            <label>Número de Cliente</label><br></br>
+                            <input type="text" placeholder="" id="nome" value={this.state.camp_id} onChange={(value) =>
+                                                        this.setState({ camp_id: value.target.value })} required />
                             <br></br>
                             <br></br>
                             <button type="submit" class="btn btn-primary" onClick={() => this.sendSave()}>Solicitar Marcação</button>
@@ -73,6 +77,7 @@ class EditComponent extends React.Component {
         else {
             const baseUrl = "http://localhost:3000/users/add_marcacao"
             const datapost = {
+                id_user: this.state.camp_id,
                 data_marcacao: this.state.camp_data_marcacao,
                 hora: this.state.camp_hora,
                 estado: "Pendente",

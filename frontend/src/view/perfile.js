@@ -46,12 +46,11 @@ class EditComponent extends React.Component {
             })
     }
 
-
     render() {
         return (
             <div class="logincenter">
 
-                <h1 class="titulos">Marcações</h1>
+                <h1 class="titulos">Perfil</h1>
 
                 <div>
                     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />

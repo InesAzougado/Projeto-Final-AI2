@@ -38,10 +38,11 @@ controllers.login = async (req, res) =>{
 /*-------- ADICIONAR MARCACAO ----------*/
 
 controllers.add_marcacao = async (req, res) => {
-    const { data_marcacao, hora, estado} = req.body;
+    const { id_user, data_marcacao, hora, estado} = req.body;
     let data;
     const response = await sequelize.sync().then(function () {  
         marcacoes.create({
+            id_user: id_user,
             data_marcacao: data_marcacao,
             hora: hora,
             estado: estado,
@@ -91,6 +92,20 @@ controllers.user_profile = async (req, res) => {
         .catch(error => {
             return error;
         })
+    res.json({ sucess: true, data: data });
+}
+
+/*-------- LISTAR MARCAÇÕES ----------*/
+
+controllers.listar_marcacao = async (req, res) => {
+    const data = await marcacoes.findAll({
+    })
+        .then(function (data) {
+            return data;
+        })
+        .catch(error => {
+            return error;
+        });
     res.json({ sucess: true, data: data });
 }
 

@@ -15,6 +15,8 @@ router.post('/add_user', usersRoute.add_user)
 
 router.get('/user_profile/:id',usersRoute.user_profile);
 
+router.get('/listar_marcacao', usersRoute.listar_marcacao)
+
 router.get('/listar_vernizes', vernizesRoute.listar_vernizes)
 
 router.get('/listar_equipamentos', vernizesRoute.listar_equipamentos)
