@@ -419,6 +419,14 @@ li a:hover {
   color: #ffffff;
 }
 
+.diminuiresp {
+  margin: -5px;
+}
+
+.diminuiresp2 {
+  margin: -3px;
+}
+
 /* -------- MARCAÇÕES --------*/
 
 .marccenter{

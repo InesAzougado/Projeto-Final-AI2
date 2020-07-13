@@ -28,19 +28,18 @@ class EditComponent extends React.Component {
                     <div class="marccenter">
                         <div class="marc-block" id="m1">
                             <form>
-                                <label>Email</label><br></br>
-                                <input type="email" placeholder="" id="nome" value={this.state.camp_email} onChange={(value) =>
-                                    this.setState({ camp_email: value.target.value })} required /><br></br>
-                                <label>Palavra Pass</label><br></br>
-                                <input type="pass" placeholder="" id="nome" value={this.state.camp_pass} onChange={(value) =>
-                                    this.setState({ camp_pass: value.target.value })} required /><br></br>
-                                <label>Nome Completo</label><br></br>
-                                <input type="text" placeholder="" id="nome" value={this.state.camp_nome} onChange={(value) =>
-                                    this.setState({ camp_nome: value.target.value })} required /><br></br>
-                                <label>Número de Telemóvel</label><br></br>
-                                <input type="text" placeholder="" id="nome" value={this.state.camp_telemovel} onChange={(value) =>
-                                    this.setState({ camp_telemovel: value.target.value })} required /><br></br>
-                                <br></br>
+                                <label class="diminuiresp2">Email</label>
+                                <input class="diminuiresp" type="email" placeholder="" id="nome" value={this.state.camp_email} onChange={(value) =>
+                                    this.setState({ camp_email: value.target.value })} required />
+                                <label class="diminuiresp2">Palavra Pass</label>
+                                <input class="diminuiresp" type="pass" placeholder="" id="nome" value={this.state.camp_pass} onChange={(value) =>
+                                    this.setState({ camp_pass: value.target.value })} required />
+                                <label class="diminuiresp2">Nome Completo</label>
+                                <input class="diminuiresp" type="text" placeholder="" id="nome" value={this.state.camp_nome} onChange={(value) =>
+                                    this.setState({ camp_nome: value.target.value })} required />
+                                <label class="diminuiresp2">Número de Telemóvel</label>
+                                <input class="diminuiresp" type="text" placeholder="" id="nome" value={this.state.camp_telemovel} onChange={(value) =>
+                                    this.setState({ camp_telemovel: value.target.value })} required />
                                 <button type="submit" class="btn btn-primary" onClick={() => this.sendSave()}>Registar</button>
                             </form>
                         </div>
