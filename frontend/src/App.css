@@ -427,6 +427,13 @@ li a:hover {
   vertical-align: top;
 }
 
+.marccenter{
+  margin-top: 50px;
+  text-align: center;
+  margin-left: 6%;
+  vertical-align: top;
+}
+
 .marc-block{
   width: 500px;
   height: 380px;

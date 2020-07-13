@@ -6,7 +6,7 @@ var users = sequelize.define('users',
         id_user: {
             type: Sequelize.INTEGER,
             primaryKey: true,
-            autoincrement: true,
+            autoIncrement: true,
         },
         email: Sequelize.STRING,
         pass: Sequelize.STRING,
@@ -16,13 +16,5 @@ var users = sequelize.define('users',
     },
     { timestamps: false, }
 );
-users.beforeCreate((users, options) => {
-    return bcrypt.hash(users.pass, 10).then(hash => {
-        users.pass = hash;
-    })
-        .catch(err => {
-            throw new Error();
-        });
-});
 
 module.exports = users;

@@ -11,6 +11,7 @@ import Marcacoes from './view/marcacoes';
 import Login from './view/login';
 import Logout from './view/logout';
 import Inicio from './view/inicio';
+import Registar from './view/registar';
 import swal from 'sweetalert2';
 window.Swal = swal;
 
@@ -46,6 +47,7 @@ function App() {
                   <li><Link to="/equipamentos">Acessórios</Link></li>
                   <li><Link to="/dicas">Dicas</Link></li>
                   <li><Link to="/portefolio">Portefólio</Link></li>
+                  <li><Link to="/registar">Registe-se!</Link></li>
                 </ul>
               </div>
 
@@ -83,6 +85,7 @@ function App() {
         <Route path="/marcacoes" exact component={Marcacoes} />
         <Route path="/login" exact component={Login} />
         <Route path="/inicio" exact component={Inicio} />
+        <Route path="/registar" exact component={Registar} />
 
       </Router>
     );
