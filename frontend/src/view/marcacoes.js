@@ -26,11 +26,12 @@ class EditComponent extends React.Component {
                 <div class="marccenter">
                     <div class="marc-block" id="m1">
                         <form>
-                            <h1>Faça a sua Marcação aqui</h1>
+                            <h1>Solicite a sua Marcação aqui</h1>
+                            <br></br>
                             <label>Escolher data</label><br></br>
                             <input type="date" placeholder="" id="nome" value={this.state.camp_data_marcacao} onChange={(value) =>
                                                         this.setState({ camp_data_marcacao: value.target.value })} required /><br></br>
-                            <select name="hora" id="nom" value={this.state.camp_hora} onChange={(value) =>
+                            <select name="hora" id="nome" value={this.state.camp_hora} onChange={(value) =>
                                                         this.setState({ camp_hora: value.target.value })} required>
                                 <option disabled selected>Hora</option>
                                 <option>9:00-10:00</option>
@@ -42,8 +43,10 @@ class EditComponent extends React.Component {
                                 <option>16:00-17:00</option>
                                 <option>17:00-18:00</option>
                             </select>
-                            <br></br><button type="submit" class="btn btn-primary"
-                                onClick={() => this.sendSave()}>Solicitar Marcação</button>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <button type="submit" class="btn btn-primary" onClick={() => this.sendSave()}>Solicitar Marcação</button>
                         </form>
                     </div>
                     <div class="marc-block" id="m2">
@@ -52,9 +55,6 @@ class EditComponent extends React.Component {
                             <label>Data e Estado</label><br></br>
                             <input type="text" placeholder="" id="data" />
                             <input type="text" placeholder="" id="estado" /><br></br><br></br>
-                            <label>Contacte-nos</label><br></br>
-                            <input type="text" value="123456789" placeholder="" id="tele" readOnly />
-                            <input type="text" value="nailsbyines@email.com" placeholder="" id="email" readOnly />
                         </form>
                     </div>
                 </div>
