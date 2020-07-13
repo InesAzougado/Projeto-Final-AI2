@@ -36,4 +36,23 @@ controllers.login = async (req, res) =>{
     }
 }
 
+/*-------- ADICIONAR MARCACAO ----------*/
+
+controllers.add_marcacao = async (req, res) => {
+    const { data_marcacao, hora} = req.body;
+    let data;
+    const response = await sequelize.sync().then(function () {  
+        marcacoes.create({
+            data_marcacao: data_marcacao,
+            hora: hora,
+        });
+        const data = marcacoes.findAll();
+        return data;
+    })
+        .catch(err => {
+            return err;
+        });
+    res.json({ sucess: true, data: data, message: "Marcacao criada com sucesso!!" });
+}
+
 module.exports = controllers;

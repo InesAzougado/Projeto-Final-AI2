@@ -5,6 +5,17 @@ import axios from 'axios';
 import '../App.css';
 
 class EditComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            camp_data_marcacao: "",
+            camp_hora: ""
+
+
+        }
+    }
+
     render() {
         return (
             <div class="logincenter">
@@ -18,56 +29,10 @@ class EditComponent extends React.Component {
                         <form>
                             <h1>Faça a sua Marcação aqui</h1>
                             <label>Escolher data</label><br></br>
-                            <select name="mes" id="mes" required>
-                                <option disabled selected>Mês</option>
-                                <option>Janeiro</option>
-                                <option>Fevereiro</option>
-                                <option>Março</option>
-                                <option>Abril</option>
-                                <option>Maio</option>
-                                <option>Junho</option>
-                                <option>Julho</option>
-                                <option>Agosto</option>
-                                <option>Setembro</option>
-                                <option>Outubro</option>
-                                <option>Novembro</option>
-                                <option>Dezembro</option>
-                            </select>
-                            <select name="dia" id="dia" required>
-                                <option disabled selected>Dia</option>
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
-                                <option>04</option>
-                                <option>05</option>
-                                <option>06</option>
-                                <option>07</option>
-                                <option>08</option>
-                                <option>09</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
-                                <option>21</option>
-                                <option>22</option>
-                                <option>23</option>
-                                <option>24</option>
-                                <option>25</option>
-                                <option>26</option>
-                                <option>27</option>
-                                <option>28</option>
-                                <option>29</option>
-                                <option>30</option>
-                                <option>31</option>
-                            </select>
-                            <select name="hora" id="hora" required>
+                            <input type="date" placeholder="" id="data" value={this.state.camp_data_marcacao} onChange={(value) =>
+                                                        this.setState({ camp_data_marcacao: value.target.value })} required /><br></br>
+                            <select name="hora" id="hora" value={this.state.camp_hora} onChange={(value) =>
+                                                        this.setState({ camp_hora: value.target.value })} required>
                                 <option disabled selected>Hora</option>
                                 <option>9:00-10:00</option>
                                 <option>10:00-11:00</option>
@@ -78,12 +43,8 @@ class EditComponent extends React.Component {
                                 <option>16:00-17:00</option>
                                 <option>17:00-18:00</option>
                             </select><br></br>
-
-                            <label>Nome</label><br></br>
-                            <input type="text" placeholder="" id="nome" required /><br></br>
-                            <label>Telemóvel</label><br></br>
-                            <input type="text" min="9" max="9" placeholder="" id="tele" required />
-                            <br></br><button>Solicitar Marcação</button>
+                            <br></br><button type="submit" class="btn btn-primary"
+                                onClick={() => this.sendSave()}>Solicitar Marcação</button>
                         </form>
                     </div>
                     <div class="marc-block" id="m2">
@@ -101,6 +62,39 @@ class EditComponent extends React.Component {
             </div>
             </div>
         );
+    }
+
+    sendSave() {
+        if (this.state.campName === "") {
+            alert("Insert Name!")
+        }
+        else if (this.state.campEmail === "") {
+            alert("Insert Email!")
+        }
+        else {
+            const baseUrl = "http://localhost:3000/users/add_marcacao"
+            const datapost = {
+                data_marcacao: this.state.camp_data_marcacao,
+                hora: this.state.camp_hora,
+
+
+
+            }
+            /*alert(
+                this.state.campName + this.state.campEmail + this.state.campLocalidade + this.state.campGenero + this.state.campIdade + this.state.campDatanascimento + this.state.campdisponibilidade + this.state.camprecomendaçoes + this.state.campanosempresa + this.state.camptipouser + this.state.camptelemovel + this.state.camplinguas + this.state.camppass
+            )*/
+            axios.post(baseUrl, datapost)
+                .then(response => {
+                    if (response.data.sucess === true) {
+                        alert(response.data.message)
+                    }
+                    else {
+                        alert(response.data.message)
+                    }
+                }).catch(error => {
+                    alert("Error 34 " + error)
+                })
+        }
     }
 
     loadFillData() {
