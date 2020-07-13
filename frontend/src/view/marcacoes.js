@@ -10,9 +10,8 @@ class EditComponent extends React.Component {
         super(props);
         this.state = {
             camp_data_marcacao: "",
-            camp_hora: ""
-
-
+            camp_hora: "",
+            camp_estado: "Pendente",
         }
     }
 
@@ -76,13 +75,9 @@ class EditComponent extends React.Component {
             const datapost = {
                 data_marcacao: this.state.camp_data_marcacao,
                 hora: this.state.camp_hora,
-
-
-
+                estado: "Pendente",
             }
-            /*alert(
-                this.state.campName + this.state.campEmail + this.state.campLocalidade + this.state.campGenero + this.state.campIdade + this.state.campDatanascimento + this.state.campdisponibilidade + this.state.camprecomendaçoes + this.state.campanosempresa + this.state.camptipouser + this.state.camptelemovel + this.state.camplinguas + this.state.camppass
-            )*/
+            
             axios.post(baseUrl, datapost)
                 .then(response => {
                     if (response.data.sucess === true) {

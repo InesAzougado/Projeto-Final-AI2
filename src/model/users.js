@@ -11,6 +11,8 @@ var users = sequelize.define('users',
         email: Sequelize.STRING,
         pass: Sequelize.STRING,
         tipo: Sequelize.CHAR,
+        nome: Sequelize.CHAR,
+        telemovel: Sequelize.CHAR,
     },
     { timestamps: false, }
 );

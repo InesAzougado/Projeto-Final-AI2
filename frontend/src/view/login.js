@@ -76,6 +76,7 @@ class EditComponent extends React.Component {
     render() {
         return (
             <div class="logincenter">
+                <br></br>
                 <div class="login-block">
                     <h1>Faça Login</h1>
                     <form onSubmit={this.submitHandler} ref={c => { this.form = c; }}>
