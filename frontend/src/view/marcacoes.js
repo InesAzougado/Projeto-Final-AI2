@@ -41,7 +41,7 @@ class EditComponent extends React.Component {
                                 <option>15:00-16:00</option>
                                 <option>16:00-17:00</option>
                                 <option>17:00-18:00</option>
-                            </select><br></br>
+                            </select>
                             <br></br><button type="submit" class="btn btn-primary"
                                 onClick={() => this.sendSave()}>Solicitar Marcação</button>
                         </form>

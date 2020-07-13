@@ -29,18 +29,17 @@ class EditComponent extends React.Component {
                         <div class="marc-block" id="m1">
                             <form>
                                 <label>Email</label><br></br>
-                                <input type="email" placeholder="" id="data" value={this.state.camp_email} onChange={(value) =>
+                                <input type="email" placeholder="" id="nome" value={this.state.camp_email} onChange={(value) =>
                                     this.setState({ camp_email: value.target.value })} required /><br></br>
                                 <label>Palavra Pass</label><br></br>
-                                <input type="password" placeholder="" id="data" value={this.state.camp_pass} onChange={(value) =>
+                                <input type="pass" placeholder="" id="nome" value={this.state.camp_pass} onChange={(value) =>
                                     this.setState({ camp_pass: value.target.value })} required /><br></br>
                                 <label>Nome Completo</label><br></br>
-                                <input type="text" placeholder="" id="data" value={this.state.camp_nome} onChange={(value) =>
+                                <input type="text" placeholder="" id="nome" value={this.state.camp_nome} onChange={(value) =>
                                     this.setState({ camp_nome: value.target.value })} required /><br></br>
                                 <label>Número de Telemóvel</label><br></br>
-                                <input type="text" placeholder="" id="data" value={this.state.camp_telemovel} onChange={(value) =>
+                                <input type="text" placeholder="" id="nome" value={this.state.camp_telemovel} onChange={(value) =>
                                     this.setState({ camp_telemovel: value.target.value })} required /><br></br>
-                                <br></br>
                                 <br></br>
                                 <button type="submit" class="btn btn-primary" onClick={() => this.sendSave()}>Registar</button>
                             </form>
@@ -52,10 +51,10 @@ class EditComponent extends React.Component {
     }
 
     sendSave() {
-        if (this.state.camp_nome === "") {
-            alert("Insert Name!")
+        if (this.state.camp_0 === "") {
+            alert("Insert Nome!")
         }
-        else if (this.state.camp_email === "") {
+        else if (this.state.camp_1 === "") {
             alert("Insert Email!")
         }
         else {
@@ -70,11 +69,11 @@ class EditComponent extends React.Component {
 
             axios.post(baseUrl, datapost)
                 .then(response => {
-                    if (response.data.sucess === true) {
-                        alert(response.data.message)
+                    if (response.data2.sucess === true) {
+                        alert(response.data2.message)
                     }
                     else {
-                        alert(response.data.message)
+                        alert(response.data2.message)
                     }
                 }).catch(error => {
                     alert("Error 34 " + error)
@@ -93,7 +92,8 @@ class EditComponent extends React.Component {
                 </tr>
             )
         });
-    }*/
+    }
+    */
 }
 
 

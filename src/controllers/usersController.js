@@ -59,7 +59,7 @@ controllers.add_marcacao = async (req, res) => {
 
 controllers.add_user = async (req, res) => {
     const { email, pass, tipo, nome, telemovel} = req.body;
-    let data;
+    let data2;
     const response = await sequelize.sync().then(function () {  
         users.create({
             email: email,
@@ -68,13 +68,13 @@ controllers.add_user = async (req, res) => {
             nome: nome,
             telemovel: telemovel,
         });
-        const data = users.findAll();
-        return data;
+        const data2 = users.findAll();
+        return data2;
     })
         .catch(err => {
             return err;
         });
-    res.json({ sucess: true, data: data, message: "Marcacao solicitada com sucesso!!" });
+    res.json({ sucess: true, data2: data2, message: "Marcacao solicitada com sucesso!!" });
 }
 
 module.exports = controllers;
